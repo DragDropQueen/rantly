@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *=
+ *= require_self
+ */
+
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@import "variables";
+@import "root_controller";
+
+.clearfix {
+  clear: both;
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+body {
+  font-family: Optima, sans-serif;
+  margin: 0;
+}
+
+.header {
+  background-color: $dark-grey;
+  width: 100%;
+  color: white;
+  height: 4em;
+
+  a {
+    color: white;
+    float: right;
+    margin-right: 1em;
+    margin-top: 1.25em;
+  }
+
+  .button {
+    width: 15%;
+    background-color: $green;
+    float: right;
+    margin-right: .5em;
+    color: white;
+    font-size: 1em;
+    padding: .5em;
+    margin-top: .75em;
+    cursor: pointer;
+    border: $light-green solid 1px;
+  }
+
+  .logo {
+    text-decoration: none;
+    font-size: 2em;
+    float: left;
+    display: inline-block;
+    border-right: $green 1px solid;
+    height: 2em;
+    padding: .5em;
+    margin-top: 0;
+  }
+}
+
+.rantly-splash {
+  text-align: center;
+
+  h1 {
+    font-size: 4em;
+    margin-bottom: .2em;
+  }
+
+  p {
+    margin-bottom: 5em;
+  }
+}
+
+.quote-splash {
+  background-color: $grey;
+  @extend .clearfix;
+  color: white;
+  min-height: 400px;
+
+  .inner-quote-splash {
+    margin: auto;
+    width: 80%;
+    padding: 3em;
+
+    img {
+      display: inline;
+      float: left;
+      margin-right: 1em;
+    }
+
+    p {
+      padding: .5em;
+    }
+  }
+}

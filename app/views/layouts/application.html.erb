@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class='header'>
+<%= link_to('Rant.ly', root_path, class: 'logo') %>
+<%= button_to('JOIN', '/', class: 'button') %>
+<%= link_to('Login', '/') %>
+</div>
+<div class="wrapper">
 <%= yield %>
-
+</div>
 </body>
 </html>
