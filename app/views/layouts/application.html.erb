@@ -9,8 +9,15 @@
 <body>
 <div class='header'>
   <%= link_to('Rant.ly', root_path, class: 'logo') %>
-  <%= button_to('JOIN', new_user_path, method: 'get', class: 'button') %>
-  <%= link_to('Login', '/') %>
+
+  <% if session[:user_id] %>
+    <%= button_to('LOGOUT', '/session', method: 'delete', class: 'button') %>
+  <% end %>
+  <% unless session[:user_id] %>
+    <%= button_to('JOIN', new_user_path, method: 'get', class: 'button') %>
+    <%= link_to('Login', new_session_path) %>
+  <% end %>
+
 </div>
 
 <% if flash[:notice] %>

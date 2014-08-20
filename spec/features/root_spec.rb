@@ -9,6 +9,19 @@ feature 'homepage' do
   end
 
   scenario 'can register' do
+    register
+  end
+
+  scenario 'can login' do
+    register
+    click_link 'Login'
+    fill_in 'user_username', with: 'monochrome'
+    fill_in 'user_password', with: 'schnee'
+    click_button 'LOGIN'
+    expect(page).to have_content('Welcome, Blake Belladona')
+  end
+
+  def register
     visit '/'
     click_button 'JOIN'
     fill_in 'user_username', with: 'monochrome'
