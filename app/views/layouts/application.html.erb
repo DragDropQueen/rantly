@@ -9,7 +9,7 @@
 <body>
 <div class='header'>
 <%= link_to('Rant.ly', root_path, class: 'logo') %>
-<%= button_to('JOIN', '/', class: 'button') %>
+<%= button_to('JOIN', new_user_path, method: 'get', class: 'button') %>
 <%= link_to('Login', '/') %>
 </div>
 <div class="wrapper">
