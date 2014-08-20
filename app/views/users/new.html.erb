@@ -1,44 +1,49 @@
 <div class="form-background">
+
   <h1>Register</h1>
   <%= form_for @user do |f| %>
-    <div class="register-flex">
-      <div class="form-right">
-        <%= f.label 'Username' %>
-        <%= f.text_field :username, class: 'textfield' %>
+    <div class="padding">
+      <div class="register-flex">
+        <div class="form-right">
+          <%= f.label 'Username' %>
+          <%= f.text_field :username, class: 'textfield' %>
 
-        <%= f.label 'First name' %>
-        <%= f.text_field :first_name, class: 'textfield' %>
-      </div>
-      <div class="form-left">
-        <%= f.label 'Password' %>
-        <%= f.text_field :password, class: 'textfield' %>
+          <%= f.label 'First name' %>
+          <%= f.text_field :first_name, class: 'textfield' %>
+        </div>
+        <div class="form-left">
+          <%= f.label 'Password' %>
+          <%= f.text_field :password, class: 'textfield' %>
 
-        <%= f.label 'Last name' %>
-        <%= f.text_field :last_name, class: 'textfield' %>
+          <%= f.label 'Last name' %>
+          <%= f.text_field :last_name, class: 'textfield' %>
+        </div>
       </div>
-    </div>
 
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
+      <%= f.label :bio %>
+      <%= f.text_area :bio %>
 
-    <div class="radios">
-      <p>How often do you rant?</p>
+      <div class="radios">
+        <p>How often do you rant?</p>
 
-      <div>
-        <%= f.radio_button(:frequency, 'Daily') %>
-        <%= f.label(:frequency_daily, 'Daily') %>
+        <div>
+          <%= f.radio_button(:frequency, 'Daily') %>
+          <%= f.label(:frequency_daily, 'Daily') %>
+        </div>
+        <div>
+          <%= f.radio_button(:frequency, 'Weekly') %>
+          <%= f.label(:frequency_weekly, 'Weekly') %>
+        </div>
+        <div>
+          <%= f.radio_button(:frequency, 'Monthly') %>
+          <%= f.label(:frequency_monthly, 'Monthly') %>
+        </div>
       </div>
-      <div>
-        <%= f.radio_button(:frequency, 'Weekly') %>
-        <%= f.label(:frequency_weekly, 'Weekly') %>
-      </div>
-      <div>
-        <%= f.radio_button(:frequency, 'Monthly') %>
-        <%= f.label(:frequency_monthly, 'Monthly') %>
-      </div>
-    </div>
     </div>
     <div class="button-background">
       <%= f.submit 'REGISTER', class: 'register-button' %>
+    </div>
   <% end %>
-  </div>
+
+</div>
+

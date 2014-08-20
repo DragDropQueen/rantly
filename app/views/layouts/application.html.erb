@@ -2,18 +2,23 @@
 <html>
 <head>
   <title>Rantly</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class='header'>
-<%= link_to('Rant.ly', root_path, class: 'logo') %>
-<%= button_to('JOIN', new_user_path, method: 'get', class: 'button') %>
-<%= link_to('Login', '/') %>
+  <%= link_to('Rant.ly', root_path, class: 'logo') %>
+  <%= button_to('JOIN', new_user_path, method: 'get', class: 'button') %>
+  <%= link_to('Login', '/') %>
 </div>
+
+<% if flash[:notice] %>
+  <p class="flash"><%= flash[:notice] %></p>
+<% end %>
+
 <div class="wrapper">
-<%= yield %>
+  <%= yield %>
 </div>
 </body>
 </html>

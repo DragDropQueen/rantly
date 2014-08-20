@@ -7,10 +7,14 @@
   width: 60%;
   margin: auto;
   margin-top: 2em;
-  padding: 1em;
+
+  .padding {
+    padding: 1em;
+  }
 
   h1 {
-    margin-top: 0;
+    padding: .5em;
+    margin-bottom: 0;
   }
 
   label {
@@ -71,7 +75,7 @@
 
 .button-background {
   background-color: white;
-  width: 60%;
+  width: 100%;
   padding: 1em;
   border-top: $dark-grey solid 1px;
   margin: auto;
