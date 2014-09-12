@@ -13,7 +13,7 @@
         </div>
         <div class="form-left">
           <%= f.label 'Password' %>
-          <%= f.text_field :password, class: 'textfield' %>
+          <%= f.password_field :password, class: 'textfield' %>
 
           <%= f.label 'Last name' %>
           <%= f.text_field :last_name, class: 'textfield' %>
@@ -23,9 +23,9 @@
       <%= f.label :bio %>
       <%= f.text_area :bio %>
 
-      <div class="radios">
-        <p>How often do you rant?</p>
+      <p>How often do you rant?</p>
 
+      <div class="radios">
         <div>
           <%= f.radio_button(:frequency, 'Daily') %>
           <%= f.label(:frequency_daily, 'Daily') %>

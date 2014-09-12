@@ -23,7 +23,10 @@
 
 @import "variables";
 @import "root_controller";
+@import "header";
 @import "users";
+@import "sessions";
+
 
 .clearfix {
   clear: both;
@@ -51,44 +54,6 @@ body {
   text-align: center;
 }
 
-.header {
-  background-color: $dark-grey;
-  width: 100%;
-  color: white;
-  height: 4em;
-
-  a {
-    color: white;
-    float: right;
-    margin-right: 1em;
-    margin-top: 1.25em;
-  }
-
-  .button {
-    width: 15%;
-    background-color: $green;
-    float: right;
-    margin-right: .5em;
-    color: white;
-    font-size: 1em;
-    padding: .5em;
-    margin-top: .75em;
-    cursor: pointer;
-    border: $light-green solid 1px;
-  }
-
-  .logo {
-    text-decoration: none;
-    font-size: 2em;
-    float: left;
-    display: inline-block;
-    border-right: $green 1px solid;
-    height: 2em;
-    padding: .5em;
-    margin-top: 0;
-  }
-}
-
 .rantly-splash {
   text-align: center;
   background-color: white;
@@ -109,27 +74,33 @@ body {
   background-color: $grey;
   @extend .clearfix;
   color: white;
-  min-height: 400px;
 
   .inner-quote-splash {
     display: flex;
     margin: auto;
+    margin-top: 40px;
     width: 80%;
-    padding: 3em;
+    min-width: 320px;
+
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 
     img {
-      display: inline;
-      float: left;
-      margin-right: 1em;
-      flex-grow: 1;
-      min-width: 200px;
       height: 200px;
+      flex-basis: 200px;
+      flex-shrink: 0;
+      flex-grow: 0;
     }
 
-    p {
-      padding: .5em;
-      flex-grow: 2;
-      margin-top: 0;
+    .text {
+      flex-basis: 200px;
+      flex-grow: 3;
+      flex-shrink: 0;
+      display: inline-block;
+      margin-left: 10px;
     }
   }
 }

@@ -1,0 +1,52 @@
+.header {
+  background-color: $dark-grey;
+  width: 100%;
+  color: white;
+  height: 4em;
+
+  a {
+    color: white;
+    float: right;
+    margin-right: 1em;
+    margin-top: 1.25em;
+  }
+
+  .header-link {
+    margin-top: 10px;
+    display: inline-block;
+
+    a {
+      float: none;
+    }
+  }
+
+  a:hover {
+    color: $light-green;
+    text-decoration: none;
+  }
+
+  .button {
+    width: 90px;
+    background-color: $green;
+    float: right;
+    margin-right: .5em;
+    color: white;
+    font-size: 1em;
+    padding: .5em;
+    margin-top: .75em;
+    cursor: pointer;
+    border: $light-green solid 1px;
+    display: inline-block;
+  }
+
+  .logo {
+    text-decoration: none;
+    font-size: 2em;
+    float: left;
+    display: inline-block;
+    border-right: $green 1px solid;
+    height: 2em;
+    padding: .5em;
+    margin-top: 0;
+  }
+}

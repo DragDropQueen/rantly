@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
+  before_filter :require_authentication!
 
   def show
-    @user = User.find(session[:user_id])
   end
 end

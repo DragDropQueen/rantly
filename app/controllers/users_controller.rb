@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout "signed-out"
 
   def new
     @user = User.new

@@ -1,7 +1,7 @@
 <div class="form-background">
   <h1>Login</h1>
   <%= form_for @user, url: session_path do |f| %>
-    <div class="padding">
+    <div class="padding login-form">
       <%= f.label 'Username' %>
       <%= f.text_field :username, class: 'textfield' %>
       <p></p>
