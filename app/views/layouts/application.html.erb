@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="initial-scale=1.0">
 </head>
 <body>
 <div class='header'>
@@ -16,7 +17,6 @@
     <a class="border">Favorites</a>
     <a class="border">Search</a>
   </div>
-
 
   <%= button_to('LOGOUT', '/session', method: 'delete', class: 'button') %>
 

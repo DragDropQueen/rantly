@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   layout 'signed-out'
 
-
   def new
     @user = User.new
   end
@@ -14,6 +13,7 @@ class SessionsController < ApplicationController
       redirect_to '/dashboard'
     else
       flash[:notice] = 'Username or password is incorrect'
+      redirect_to root_path
     end
   end
 
