@@ -82,7 +82,7 @@ body {
     flex-direction: row;
     align-content: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     img {
@@ -90,7 +90,7 @@ body {
       flex-basis: 200px;
       flex-shrink: 0;
       flex-grow: 0;
-      margin: auto;
+      margin-left: 50px;
     }
 
     .text {
