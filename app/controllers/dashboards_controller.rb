@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-  before_filter :require_authentication!
+  before_filter :require_authentication!, :set_sidebar
 
   def show
   end

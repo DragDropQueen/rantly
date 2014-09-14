@@ -1,0 +1,18 @@
+<div class="side-bar">
+  <%= image_tag '200.jpeg' %>
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+
+  <hr>
+
+  <%= form_for @rant do |f| %>
+
+    <%= f.label 'A rant about:' %>
+    <%= f.text_field :title, class: 'textfield' %>
+
+    <%= f.label 'Rant:' %>
+    <%= f.text_area :rant, class: 'textarea' %>
+
+    <%= f.submit 'RANT', class: 'button' %>
+
+  <% end %>
+</div>

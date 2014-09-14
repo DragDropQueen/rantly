@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path, notice: "You must be logged in to do that!"
   end
+
+  def set_sidebar
+    @rant = Rant.new
+  end
 end
