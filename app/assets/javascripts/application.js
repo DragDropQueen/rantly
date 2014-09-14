@@ -12,5 +12,37 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+var colorTab = function () {
+  if ($('.dashboard-div') != {}) {
+    $('.dashboard-link').css('color', '#37731e')
+  }
+};
+
+var openHeadermenu = function () {
+  $('#header-menu-toggle').click(function (e) {
+    e.stopPropagation();
+    $('.header-menu').toggle()
+  });
+
+  $('.header-menu').click(function(e){
+    e.stopPropagation();
+  });
+
+  $('body').click(function(){
+    console.log('click');
+    $('.header-menu').hide()
+  });
+};
+
+
+$(document).ready(function () {
+
+
+  colorTab();
+
+  openHeadermenu();
+
+
+});

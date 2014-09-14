@@ -25,24 +25,21 @@
   .textfield {
     width: 100%
   }
-
-
 }
 
 .register-flex {
   display: flex;
   width: 100%;
+  justify-content: space-between;
 }
 
 .form-right {
   flex-grow: 1;
-  width: 46%;
-  margin-right: 8%;
+  margin-right: 20px;
 }
 
 .form-left {
   flex-grow: 1;
-  width: 46%;
 }
 
 #user_bio {

@@ -1,52 +1,124 @@
+.header-link-mixin {
+  display: inline-block;
+  color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+
+  &:hover {
+    color: $light-green;
+    text-decoration: none;
+  }
+}
+
+.header-button-mixin {
+  width: 90px;
+  background-color: $green;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: $light-green solid 1px;
+}
+
 .header {
   background-color: $dark-grey;
   width: 100%;
   color: white;
-  height: 4em;
+  height: 65px;
+
+  .button-div {
+    padding-top: 15px;
+    float: right;
+    margin-right: 10px;
+    display: inline-block;
+  }
 
   a {
-    color: white;
-    float: right;
-    margin-right: 1em;
-    margin-top: 1.25em;
+    @extend .header-link-mixin
+  }
+
+  .border {
+    border-right: $light-green 1px solid;
   }
 
   .header-link {
-    margin-top: 10px;
     display: inline-block;
-
-    a {
-      float: none;
-    }
-  }
-
-  a:hover {
-    color: $light-green;
-    text-decoration: none;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 10%;
   }
 
   .button {
-    width: 90px;
-    background-color: $green;
-    float: right;
-    margin-right: .5em;
-    color: white;
-    font-size: 1em;
-    padding: .5em;
-    margin-top: .75em;
-    cursor: pointer;
-    border: $light-green solid 1px;
-    display: inline-block;
+    @extend .header-button-mixin
   }
 
   .logo {
     text-decoration: none;
-    font-size: 2em;
-    float: left;
-    display: inline-block;
+    font-size: 30px;
     border-right: $green 1px solid;
-    height: 2em;
+    height: 65px;
     padding: .5em;
-    margin-top: 0;
+  }
+
+  img {
+    float: right;
+    height: 40px;
+    width: 40px;
+    display: none;
+    margin: 10px;
+  }
+}
+
+.header-menu {
+  display: none;
+  width: 320px;
+  background-color: $dark-grey;
+  position: absolute;
+  right: 0;
+  top: 65px;
+  padding: 10px;
+  border: 1px $light-green solid;
+
+  a {
+    @extend .header-link-mixin;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px $light-green solid;
+  }
+
+  .button-div {
+    display: block;
+    float: none;
+    margin: auto;
+  }
+
+  .button {
+    @extend .header-button-mixin;
+    display: inline-block;
+    margin: auto;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .header-open {
+    display: none;
+  }
+
+  .header img {
+    display: inline-block;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .header-open {
+    width: 75%;
+    float: right;
+  }
+
+  .header img {
+    display: none;
   }
 }

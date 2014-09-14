@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Rantly</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="initial-scale=1.0">
 </head>
@@ -11,8 +11,11 @@
 <div class='header'>
   <%= link_to('Rant.ly', root_path, class: 'logo') %>
 
-  <%= button_to('JOIN', new_user_path, method: 'get', class: 'button') %>
-  <%= link_to('Login', new_session_path) %>
+  <div class="button-div">
+    <%= link_to('Login', new_session_path) %>
+
+    <%= button_to('JOIN', new_user_path, method: 'get', class: 'button') %>
+  </div>
 
 </div>
 
