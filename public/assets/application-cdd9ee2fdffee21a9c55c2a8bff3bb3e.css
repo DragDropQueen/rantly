@@ -1,0 +1,320 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *=
+
+ */
+/* line 19, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 1, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header-link-mixin, .header a, .header-menu a {
+  display: inline-block;
+  color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+}
+/* line 8, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header-link-mixin:hover, .header a:hover, .header-menu a:hover {
+  color: #91de76;
+  text-decoration: none;
+}
+
+/* line 14, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header-button-mixin, .header .button, .header-menu .button {
+  width: 90px;
+  background-color: #37731e;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: #91de76 solid 1px;
+}
+
+/* line 24, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header {
+  background-color: #333333;
+  width: 100%;
+  color: white;
+  height: 65px;
+}
+/* line 30, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header .button-div {
+  padding-top: 15px;
+  float: right;
+  margin-right: 10px;
+  display: inline-block;
+}
+/* line 36, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header .button-div form {
+  display: inline-block;
+}
+/* line 45, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header .border {
+  border-right: #91de76 1px solid;
+}
+/* line 49, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header .header-link {
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 10%;
+}
+/* line 60, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header .logo {
+  text-decoration: none;
+  font-size: 30px;
+  border-right: #37731e 1px solid;
+  height: 65px;
+  padding: .5em;
+}
+/* line 68, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header img {
+  float: right;
+  height: 40px;
+  width: 40px;
+  display: none;
+  margin: 10px;
+}
+
+/* line 77, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header-menu {
+  display: none;
+  width: 320px;
+  background-color: #333333;
+  position: absolute;
+  right: 0;
+  top: 65px;
+  padding: 10px;
+  border: 1px #91de76 solid;
+}
+/* line 87, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header-menu a {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px #91de76 solid;
+}
+/* line 96, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header-menu .button-div {
+  display: block;
+  float: none;
+  margin: auto;
+}
+/* line 102, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+.header-menu .button {
+  display: inline-block;
+  margin: auto;
+}
+
+@media all and (max-width: 700px) {
+  /* line 110, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+  .header-open {
+    display: none;
+  }
+
+  /* line 114, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+  .header img {
+    display: inline-block;
+  }
+}
+@media all and (min-width: 700px) {
+  /* line 120, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+  .header-open {
+    width: 75%;
+    float: right;
+  }
+
+  /* line 125, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/header.scss */
+  .header img {
+    display: none;
+  }
+}
+/* line 5, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.form-background {
+  background-color: white;
+  width: 60%;
+  min-width: 320px;
+  margin: auto;
+  margin-top: 2em;
+}
+/* line 12, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.form-background .padding {
+  padding: 1em;
+}
+/* line 16, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.form-background h1 {
+  padding: .5em;
+  margin-bottom: 0;
+}
+/* line 21, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.form-background label {
+  display: block;
+}
+/* line 25, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.form-background .textfield {
+  width: 100%;
+}
+
+/* line 30, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.register-flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* line 36, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.form-right {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+/* line 41, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.form-left {
+  flex-grow: 1;
+}
+
+/* line 45, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+#user_bio {
+  width: 100%;
+  resize: none;
+  rows: 8;
+  height: 10em;
+}
+
+/* line 52, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.radios {
+  display: flex;
+  justify-content: space-between;
+}
+/* line 56, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.radios label {
+  display: inline;
+}
+/* line 60, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.radios div {
+  display: inline-block;
+  width: 90px;
+}
+
+/* line 66, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.register-button {
+  background-color: #37731e;
+  width: 100%;
+  color: white;
+  height: 3em;
+  border: #91de76 solid 1px;
+  cursor: pointer;
+}
+
+/* line 76, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/users.scss */
+.button-background {
+  background-color: white;
+  width: 100%;
+  padding: 1em;
+  border-top: #333333 solid 1px;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+/* line 5, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/sessions.scss */
+.login-form {
+  margin: auto;
+  min-width: 320px;
+  width: 70%;
+}
+
+/* line 32, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.clearfix, .quote-splash {
+  clear: both;
+  zoom: 1;
+}
+/* line 35, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.clearfix:before, .quote-splash:before, .clearfix:after, .quote-splash:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+/* line 41, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.clearfix:after, .quote-splash:after {
+  clear: both;
+}
+
+/* line 46, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+body {
+  font-family: Optima, sans-serif;
+  margin: 0;
+  background-color: #646464;
+}
+
+/* line 52, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.flash {
+  color: #91de76;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 58, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.rantly-splash {
+  text-align: center;
+  background-color: white;
+  padding-bottom: 90px;
+  padding-top: 60px;
+}
+/* line 64, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.rantly-splash h1 {
+  font-size: 70px;
+  margin-bottom: 25px;
+}
+
+/* line 70, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.quote-splash {
+  background-color: #646464;
+  color: white;
+}
+/* line 75, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.quote-splash .inner-quote-splash {
+  display: flex;
+  margin: auto;
+  margin-top: 40px;
+  width: 80%;
+  min-width: 320px;
+  padding: 10px;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 89, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.quote-splash .inner-quote-splash img {
+  height: 200px;
+  flex-basis: 200px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: auto;
+}
+/* line 97, /Users/savannah/gSchoolWork/rantly/app/assets/stylesheets/application.scss */
+.quote-splash .inner-quote-splash .text {
+  flex-basis: 200px;
+  flex-grow: 3;
+  flex-shrink: 0;
+  display: inline-block;
+  margin-left: 10px;
+}
