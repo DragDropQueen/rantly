@@ -12,7 +12,23 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:notice] = 'Please fill out all fields!'
-      render :new
+      redirect_to new_user_path
+    end
+  end
+
+  def edit
+    render layout: 'application' if require_authentication!
+  end
+
+  def update
+    require_authentication!
+
+    if @user.update(user_params)
+      flash[:notice] = 'Your profile has been updated!'
+      redirect_to root_path
+    else
+      flash[:notice] = 'Please fill out all fields!'
+      redirect_to edit_user_path
     end
   end
 

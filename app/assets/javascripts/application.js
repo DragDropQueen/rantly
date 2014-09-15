@@ -15,7 +15,7 @@
 //= require_tree .
 
 var colorTab = function () {
-  if ($('.dashboard-div') != {}) {
+  if ($('.dashboard-div').length != 0) {
     $('.dashboard-link').css('color', '#37731e')
   }
 };

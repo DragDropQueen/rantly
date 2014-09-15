@@ -1,0 +1,12 @@
+<% rants.each do |rant| %>
+  <div class="rant-blurb">
+    <div class="left-blurb">
+      <%= rant.user.first_name %>
+      <%= image_tag rant.user.avatar %>
+    </div>
+    <div class="right-blurb">
+      <%= rant.rant %>
+    </div>
+  </div>
+
+<% end %>

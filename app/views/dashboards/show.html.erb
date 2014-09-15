@@ -1,4 +1,9 @@
+<div class="page_container">
+  <div class="dashboard-div focus">
+    <h1>Latest Rants</h1>
+    <h1>My Rants</h1>
+    <%= render 'rants/rantblurb', rants: @user.rants %>
+  </div>
 
-<div class="dashboard-div"></div>
-
-<%= render 'dashboards/sidebar' %>
+  <%= render 'dashboards/sidebar' %>
+</div>

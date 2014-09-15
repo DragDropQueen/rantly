@@ -1,17 +1,26 @@
 .side-bar {
   width: 320px;
+  min-width: 320px;
   color: white;
   padding: 20px;
-  float: left;
+  margin: auto;
 
   .button {
     width: 100%;
     margin-top: 10px;
   }
 
-  h1 {
+  a {
+    color: white;
+    text-decoration: none;
     text-align: center;
     font-size: 20px;
+    display: block;
+    margin: 10px;
+
+    &:hover {
+      color: $light-green;
+    }
   }
 
   img {

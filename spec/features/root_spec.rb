@@ -9,19 +9,6 @@ feature 'homepage' do
   end
 
   scenario 'can register' do
-    register
-  end
-
-  scenario 'can login' do
-    register
-    click_link 'Login'
-    fill_in 'user_username', with: 'monochrome'
-    fill_in 'user_password', with: 'schnee'
-    click_button 'LOGIN'
-    expect(page).to have_content('Welcome, Blake Belladona')
-  end
-
-  def register
     visit '/'
     click_button 'JOIN'
     fill_in 'user_username', with: 'monochrome'
@@ -32,5 +19,10 @@ feature 'homepage' do
     choose 'user_frequency_daily'
     click_button 'REGISTER'
     expect(page).to have_content 'You have registered successfully!'
+  end
+
+  scenario 'can login' do
+    user = create_user
+    login(user)
   end
 end

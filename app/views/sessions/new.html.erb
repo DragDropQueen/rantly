@@ -3,7 +3,7 @@
   <%= form_for @user, url: session_path do |f| %>
     <div class="padding login-form">
       <%= f.label 'Username' %>
-      <%= f.text_field :username, class: 'textfield' %>
+      <%= f.text_field :username, class: 'textfield', autofocus: true %>
       <p></p>
       <%= f.label 'Password' %>
       <%= f.text_field :password, class: 'textfield' %>

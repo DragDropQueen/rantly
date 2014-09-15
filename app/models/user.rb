@@ -3,4 +3,6 @@ class User < ActiveRecord::Base
 
   validates :username, :last_name, :first_name, :bio, :frequency, presence: true
   validates :username, uniqueness: true
+
+  has_many :rants
 end

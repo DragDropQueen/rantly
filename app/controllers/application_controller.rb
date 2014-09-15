@@ -7,9 +7,12 @@ class ApplicationController < ActionController::Base
 
   def require_authentication!
     @user = User.find(session[:user_id])
+    true
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path, notice: "You must be logged in to do that!"
+    false
   end
+
 
   def set_sidebar
     @rant = Rant.new

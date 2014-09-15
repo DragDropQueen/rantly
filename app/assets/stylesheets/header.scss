@@ -11,16 +11,6 @@
   }
 }
 
-.header-button-mixin {
-//  width: 90px;
-//  background-color: $green;
-//  height: 30px;
-//  color: white;
-//  font-size: 16px;
-//  cursor: pointer;
-//  border: $light-green solid 1px;
-}
-
 .header {
   background-color: $dark-grey;
   width: 100%;
@@ -51,10 +41,6 @@
     padding-bottom: 10px;
     margin-top: 20px;
     margin-left: 10%;
-  }
-
-  .button {
-    @extend .header-button-mixin
   }
 
   .logo {
@@ -100,7 +86,6 @@
   }
 
   .button {
-    @extend .header-button-mixin;
     display: inline-block;
     margin: auto;
   }

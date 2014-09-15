@@ -1,6 +1,6 @@
 <div class="side-bar">
-  <%= image_tag '200.jpeg' %>
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  <%= image_tag @user.avatar %>
+  <%= link_to full_name(@user), [:edit, @user] %>
 
   <hr>
 
