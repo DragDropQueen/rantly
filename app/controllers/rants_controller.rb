@@ -11,6 +11,19 @@ class RantsController < ApplicationController
     end
   end
 
+  def destroy
+    @rant = Rant.find(params[:id])
+
+    if @rant.user_id == @user.id
+      @rant.destroy
+      flash[:notice] = 'rant deleted!'
+    else
+      flash[:notice] = 'you can only delete your own rants!'
+    end
+
+    redirect_to '/dashboard'
+  end
+
   private
 
   def rant_params
