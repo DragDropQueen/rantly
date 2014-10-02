@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :new, :destroy]
   resource :user
 
-  root 'root#show'
+  root 'root#show', via: 'get'
 end

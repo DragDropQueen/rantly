@@ -24,4 +24,8 @@ feature 'dashboard' do
 
     expect(page).to have_content('all rant fields are required')
   end
+
+  scenario 'can see other user\'s rants' do
+    
+  end
 end

@@ -10,6 +10,18 @@ def create_user(overrides = {})
                }.merge(overrides))
 end
 
+def create_other_user(overrides = {})
+  User.create!({
+                 username: 'kaine',
+                 password: 'nier',
+                 first_name: 'gestalt',
+                 last_name: 'replicant',
+                 bio: 'part shade',
+                 frequency: 'Daily',
+                 avatar: '200.jpeg'
+               }.merge(overrides))
+end
+
 def full_name(person)
   [person.first_name, person.last_name].join(" ")
 end
