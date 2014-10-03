@@ -10,6 +10,6 @@ def create_other_rant(id, overrides = {})
   Rant.create({
     user_id: id,
     title: 'i only want what i can\'t have',
-    rant: 'their faces are dancing, they\'re'
-              })
+    rant: 'their faces are dancing, they\'re dancing till they can\'t stand it. composer that never composed, singing the symphonies of the overdosed. Composer that never composed, singing, I only want what i can have, i only want what i can\'t have. heralded as a king before i had a birthday.'
+              }.merge(overrides))
 end
