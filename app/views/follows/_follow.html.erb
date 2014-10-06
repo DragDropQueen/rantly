@@ -1,0 +1,5 @@
+<div class="follow-blurb">
+  <p><%= full_name(follow.user) %></p>
+  <%= image_tag(follow.user.avatar) %>
+  <%= render partial: 'follows/follow_link', locals: {user: follow.user} %>
+</div>

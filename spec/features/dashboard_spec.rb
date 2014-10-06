@@ -30,7 +30,7 @@ feature 'dashboard' do
 
   scenario 'can see other user\'s rants' do
     @other_user = create_other_user
-    rant = create_rant(@other_user.id)
+    rant = create_rant(@other_user)
 
     login(@user)
 

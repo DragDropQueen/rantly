@@ -8,7 +8,7 @@ feature 'rant' do
   end
 
   scenario 'can delete a rant' do
-    @rant = create_rant(@user.id)
+    @rant = create_rant(@user)
 
     visit '/dashboard'
 

@@ -1,0 +1,5 @@
+<% unless check_if_follow(user) %>
+  <%= link_to 'Follow', user_follows_path(user), method: :post, class: 'follow-link' %>
+<% else %>
+  <%= link_to 'Unfollow', follow_path(@follow), method: :delete, class: 'follow-link' %>
+<% end %>

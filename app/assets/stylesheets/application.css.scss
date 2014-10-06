@@ -27,6 +27,7 @@
 @import "sessions";
 @import "sidebar";
 @import "rants";
+@import "follows";
 
 .clearfix {
   clear: both;
@@ -64,7 +65,7 @@ body {
   text-align: center;
 }
 
-.page_container {
+.page-container {
   display: flex;
   width: 100%;
   flex-wrap: wrap;

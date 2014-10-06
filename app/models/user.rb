@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
 
   has_many :rants
-
+  has_many :follows, foreign_key: :follower_id
+  has_many :follows, foreign_key: :followee_id
 end

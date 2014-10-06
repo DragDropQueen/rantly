@@ -1,6 +1,6 @@
   <div class="header-link">
     <%= link_to 'Dashboard', '/dashboard', class: 'border dashboard-link' %>
-    <a class="border">Following</a>
+    <%= link_to 'Following', user_follows_path(@user), class: "border follow-link" %>
     <a class="border">Favorites</a>
     <a>Search</a>
   </div>
