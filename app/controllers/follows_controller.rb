@@ -10,6 +10,11 @@ class FollowsController < ApplicationController
       follower_id: @user.id,
       followee_id: params[:user_id]
     })
-    redirect_to '/dashboard'
+    redirect_to :back
+  end
+
+  def destroy
+    Follow.find(params[:id]).destroy
+    redirect_to :back
   end
 end

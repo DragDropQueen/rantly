@@ -20,4 +20,15 @@ feature 'interactions with other users' do
     expect(page).to have_content(full_name(@other_user))
     expect(page).to have_link('Unfollow')
   end
+
+  scenario 'can unfollow other users' do
+    click_on 'Follow'
+    click_on 'Unfollow'
+
+    within '.header' do
+      click_on 'Following'
+    end
+    expect(page).to_not have_link('Unfollow')
+    expect(page).to_not have_content(full_name(@other_user))
+  end
 end
