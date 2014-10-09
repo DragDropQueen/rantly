@@ -26,4 +26,14 @@ feature 'profile' do
     expect(page).to have_link Follow
     expect(page).to have_content @other_user.bio
   end
+
+  scenario "can view a user's rants on their profile" do
+    click_on @rant.rant
+
+    click_on @other_user.first_name
+
+    expect(page).to have_content(@rant.title)
+    expect(page).to have_content(@rant.rant)
+    expect(page).to have_content('Favorite')
+  end
 end

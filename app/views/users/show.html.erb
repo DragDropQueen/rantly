@@ -14,4 +14,14 @@
   </div>
 
   <%= @profile_user.bio %>
+
+  <div class="profile-rants">
+    <% @profile_user.rants.each do |rant| %>
+      <h3><%= rant.title %></h3>
+
+      <p><%= rant.rant %></p>
+      <%= render partial: 'favorites/favorite_link', locals: {rant: rant} %>
+
+    <% end %>
+  </div>
 </div>
