@@ -8,7 +8,7 @@
     <%= image_tag @display_rant.user.avatar %>
 
     <div class="subheader">
-      <h3>by <%= full_name(@display_rant.user) %></h3>
+      <h3>by <%= link_to full_name(@display_rant.user), user_path(@display_rant.user) %></h3>
 
       <div class="button-div">
         <button class="blue">Tweet</button>

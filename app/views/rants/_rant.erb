@@ -1,9 +1,10 @@
 <div class="rant-wrapper">
   <div class="rant-blurb">
     <div class="left-blurb">
-      <%= link_to rant.user.first_name, user_path(rant.user) %>
+      <%= render partial: 'users/profile_link', locals: {user: rant.user} %>
       <%= image_tag rant.user.avatar %>
       <% unless rant.user == @user %>
+
         <%= render partial: 'follows/follow_link', locals: {user: rant.user} %>
       <% end %>
     </div>
