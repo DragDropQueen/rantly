@@ -1,5 +1,5 @@
 class RantsController < ApplicationController
-  before_filter :require_authentication!
+  before_filter :require_authentication!, :set_sidebar
 
   def create
     @rant = Rant.new(rant_params)
@@ -22,6 +22,10 @@ class RantsController < ApplicationController
     end
 
     redirect_to '/dashboard'
+  end
+
+  def show
+    @display_rant = Rant.find(params[:id])
   end
 
   private

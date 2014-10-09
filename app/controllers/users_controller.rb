@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    render layout: 'application' if require_authentication!
+    render layout: 'edit_user' if require_authentication!
   end
 
   def update

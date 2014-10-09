@@ -59,6 +59,24 @@ body {
   border: $light-green solid 1px;
 }
 
+.tiny-button {
+  width: 50px;
+  color: white;
+  cursor: pointer;
+  height: 25px;
+  border: 1px $grey solid;
+}
+
+.red {
+  @extend .tiny-button;
+  background-color: red;
+}
+
+.blue {
+  @extend .tiny-button;
+  background-color: dodgerblue;
+}
+
 .flash {
   color: $light-green;
   width: 100%;

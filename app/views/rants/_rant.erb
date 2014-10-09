@@ -1,0 +1,22 @@
+<div class="rant-wrapper">
+  <div class="rant-blurb">
+    <div class="left-blurb">
+      <%= rant.user.first_name %>
+      <%= image_tag rant.user.avatar %>
+      <% unless rant.user == @user %>
+        <%= render partial: 'follows/follow_link', locals: {user: rant.user} %>
+      <% end %>
+    </div>
+    <a href="/rants/<%= rant.id %>"  class="right-blurb">
+      <%= truncate(rant.rant, :length => 300) %>
+    </a>
+
+
+  </div>
+  <p>
+    <% if rant.user == @user %>
+      <%= link_to 'Delete', rant_path(rant), method: :delete, class: 'delete-rant-link' %>
+    <% end %>
+  </p>
+</div>
+

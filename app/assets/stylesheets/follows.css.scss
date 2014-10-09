@@ -5,26 +5,7 @@
     align-content: space-around;
     flex-wrap: wrap;
     margin: auto;
-
-    @media all and (min-width: 510px) {
-      width: 480px;
-    }
-
-    @media all and (min-width: 650px) {
-      width: 320px;
-    }
-
-    @media all and (min-width: 940px) {
-      width: 600px;
-    }
-
-    @media all and (min-width: 1034px) {
-      width: 700px;
-    }
-
-    @media all and (min-width: 1230px) {
-      width: 900px;
-    }
+    @include breaks;
   }
 
 }

@@ -1,11 +1,7 @@
-<div class="page-container">
   <div class="dashboard-div focus">
     <h1>Latest Rants</h1>
-    <%= render 'rants/rantblurb', rants: get_latest_rants %>
+    <%= render get_latest_rants %>
     <hr>
     <h1>My Rants</h1>
-    <%= render 'rants/rantblurb', rants: @user.rants %>
+    <%= render @user.rants %>
   </div>
-
-  <%= render 'dashboards/sidebar' %>
-</div>

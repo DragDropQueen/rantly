@@ -1,0 +1,28 @@
+<div class="rant-show focus">
+  <div class="rant-port">
+    <h1><%= @display_rant.title %></h1>
+
+    <a>Favorite</a>
+
+    <hr class="long-rule">
+    <%= image_tag @display_rant.user.avatar %>
+
+    <div class="subheader">
+      <h3>by <%= full_name(@display_rant.user) %></h3>
+
+      <div class="button-div">
+        <button class="blue">Tweet</button>
+        <button class="red">Spam</button>
+      </div>
+    </div>
+
+
+    <br/>
+
+    <p><%= @display_rant.rant %></p>
+
+    <hr>
+
+  </div>
+</div>
+
