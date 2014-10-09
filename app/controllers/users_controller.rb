@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   layout "signed-out"
 
+  def show
+    require_authentication!; set_sidebar
+    @profile_user = User.find(params[:id])
+    render layout: 'application'
+  end
+
   def new
     @user = User.new
   end

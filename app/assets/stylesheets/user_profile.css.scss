@@ -1,0 +1,29 @@
+.show-user-profile {
+  @include breaks;
+
+  .follow-link {
+    margin-top: 55px;
+    float: right;
+  }
+
+  h1 {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    display: block;
+    margin: auto;
+  }
+
+  img {
+    margin: 20px;
+    display: block;
+  }
+
+  .subheader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

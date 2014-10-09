@@ -23,11 +23,12 @@
 @import "variables";
 @import "root_controller";
 @import "header";
-@import "users";
+@import "login_register";
 @import "sessions";
 @import "sidebar";
 @import "rants";
 @import "follows";
+@import "user_profile";
 
 .clearfix {
   clear: both;
@@ -102,6 +103,10 @@ body {
   hr {
     margin-top: 30px;
     width: 50%;
+  }
+
+  .long {
+    width: 90%;
   }
 }
 

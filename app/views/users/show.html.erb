@@ -1,0 +1,17 @@
+<div class="focus show-user-profile">
+
+  <h1><%= full_name(@profile_user) %></h1>
+
+  <%= render partial: 'follows/follow_link', locals: {user: @profile_user} %>
+
+  <hr class="long"/>
+
+  <div class="subheader">
+
+    <%= image_tag @profile_user.avatar %>
+
+    <h2><%= @profile_user.frequency %> Ranter</h2>
+  </div>
+
+  <%= @profile_user.bio %>
+</div>

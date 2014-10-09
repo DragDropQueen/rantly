@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: 'show'
   resource :session, only: [:create, :new, :destroy]
-  resource :user, only: [:create, :new, :edit, :update]
-  resources :users, only: :show do
+  resources :users, only: :show, as: 'users' do
     resources :follows, only: [:index, :create, :destroy], shallow: true
   end
+  resource :user, only: [:create, :new, :edit, :update]
 
   root 'root#show', via: 'get'
 end
