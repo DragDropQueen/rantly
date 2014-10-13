@@ -9,7 +9,7 @@ feature 'profile' do
     login(@user)
   end
 
-  scenario 'can edit profile' do
+  scenario 'can view profile' do
     click_on @other_user.first_name
 
     expect(page).to have_content full_name(@other_user)

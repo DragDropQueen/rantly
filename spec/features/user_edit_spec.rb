@@ -15,6 +15,8 @@ feature 'profile' do
     expect(find_field('user_username').value).to eq @user.username
     expect(has_checked_field?('user_frequency_daily')).to eq true
 
+    fill_in 'user_password', with: @user.password
+
     click_on "Edit profile"
 
     expect(page).to have_content('Your profile has been updated!')
@@ -27,6 +29,6 @@ feature 'profile' do
 
     click_on 'Edit profile'
 
-    expect(page).to have_content('Please fill out all fields!')
+    expect(page).to have_content('')
   end
 end

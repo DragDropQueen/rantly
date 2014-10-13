@@ -6,24 +6,30 @@
       <div class="register-flex">
         <div class="form-right">
           <%= f.label 'Username' %>
+          <p class="error"><%= @user.errors[:username].first %></p>
           <%= f.text_field :username, class: 'textfield', autofocus: true %>
 
           <%= f.label 'First name' %>
+          <p class="error"><%= @user.errors[:first_name].first %></p>
           <%= f.text_field :first_name, class: 'textfield' %>
         </div>
         <div class="form-left">
           <%= f.label 'Password' %>
+          <p class="error"><%= @user.errors[:password].first %></p>
           <%= f.password_field :password, class: 'textfield' %>
 
           <%= f.label 'Last name' %>
+          <p class="error"><%= @user.errors[:last_name].first %></p>
           <%= f.text_field :last_name, class: 'textfield' %>
         </div>
       </div>
 
       <%= f.label :bio %>
+      <p class="error"><%= @user.errors[:bio].first %></p>
       <%= f.text_area :bio %>
 
-      <p>How often do you rant?</p>
+      <p>How often do you rant? </p>
+      <p class="error"><%= @user.errors[:frequency].first %></p>
 
       <div class="radios">
         <div>

@@ -78,6 +78,20 @@ body {
   background-color: dodgerblue;
 }
 
+.error {
+  color: $red;
+  margin: 0;
+  display: inline;
+}
+
+.field_with_errors {
+  outline: none;
+
+  input {
+    box-shadow: 0 0 5px $red;
+  }
+}
+
 .flash {
   color: $light-green;
   width: 100%;
