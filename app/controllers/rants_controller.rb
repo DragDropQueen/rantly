@@ -6,7 +6,6 @@ class RantsController < ApplicationController
     if @rant.save
       redirect_to root_path, notice: 'Your rant has been posted!'
     else
-      flash[:notice] = 'all rant fields are required'
       render :'dashboards/show'
     end
   end

@@ -10,7 +10,7 @@ feature 'dashboard' do
     login(@user)
 
     fill_in 'rant_title', with: 'robots'
-    fill_in 'rant_rant', with: 'this won\'t hurt more than a pinch, so just pour a drink, let\'s talk it over?'
+    fill_in 'rant_rant', with: 'this won\'t hurt more than a pinch, so just pour a drink, let\'s talk it over? I\'m back after all these years, don\'t be afraid my dear. Now I\'m older.'
     click_on 'RANT'
 
     expect(page).to have_content('Your rant has been posted!')
@@ -25,8 +25,22 @@ feature 'dashboard' do
 
     click_on 'RANT'
 
-    expect(page).to have_content('all rant fields are required')
+    expect(page).to have_content('A rant about: can\'t be blank')
+    expect(page).to have_content('Rant: can\'t be blank')
   end
+
+  scenario 'rant fields validate length' do
+    login(@user)
+
+    fill_in 'rant_title', with: 'living in a city of sleepless people who all know the limit and won\'t go too far outside the lines cause they\'re out of their minds'
+    fill_in 'rant_rant', with: 'i wanna get out'
+
+    click_on 'RANT'
+
+    expect(page).to have_content('A rant about: is too long (maximum is 50 characters)')
+    expect(page).to have_content('Rant: is too short (minimum is 140 characters)')
+  end
+
 
   scenario 'can see other user\'s rants' do
     @other_user = create_other_user
