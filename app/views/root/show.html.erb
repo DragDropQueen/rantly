@@ -3,6 +3,12 @@
 
   <p>Let it all out</p>
 </div>
+
+<% if session[:show_register_notice] %>
+<p class="unregistered-flash">Welcome back! Please consider registering to begin your ranting!</p>
+<% end %>
+
+
 <div class="quote-splash">
   <div class="inner-quote-splash">
     <%= image_tag '200.jpeg' %>

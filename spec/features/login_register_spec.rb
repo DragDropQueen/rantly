@@ -19,6 +19,8 @@ feature 'homepage' do
     choose 'user_frequency_daily'
     click_button 'REGISTER'
     expect(page).to have_content 'You have registered successfully!'
+
+    expect(page).to_not have_content('Welcome back! Please consider registering to begin your ranting!')
   end
 
   scenario 'can login' do
@@ -62,5 +64,15 @@ feature 'homepage' do
     click_button 'LOGIN'
 
     expect(page).to have_content('Username or password is incorrect')
+  end
+
+  scenario 'gives never-registered message' do
+    visit '/'
+
+    expect(page).to_not have_content('Welcome back! Please consider registering to begin your ranting!')
+
+    visit '/'
+
+    expect(page).to have_content('Welcome back! Please consider registering to begin your ranting!')
   end
 end

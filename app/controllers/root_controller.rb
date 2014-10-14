@@ -2,6 +2,12 @@ class RootController < ApplicationController
   layout 'signed-out'
 
   def show
-    redirect_to dashboard_path if session[:user_id]
+    if session[:user_id]
+      redirect_to dashboard_path
+    else
+      render :show
+    end
+
+    session[:show_register_notice] ||= true
   end
 end
