@@ -1,1 +1,9 @@
-<a class="favorite-link">Favorite</a>
+<% unless rant_is_favorited?(rant) %>
+
+<%= link_to 'Favorite', rant_favorites_path(rant), method: 'POST', class: 'rant-link'  %>
+
+<% else %>
+
+<a class="rant-link">Unfavorite</a>
+
+<% end %>

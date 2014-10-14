@@ -8,15 +8,17 @@
         <%= render partial: 'follows/follow_link', locals: {user: rant.user} %>
       <% end %>
     </div>
-    <a href="/rants/<%= rant.id %>"  class="right-blurb">
+    <a href="/rants/<%= rant.id %>" class="right-blurb">
       <%= truncate(rant.rant, :length => 300) %>
     </a>
 
 
   </div>
-  <p>
+  <p class="rant-link-container">
     <% if rant.user == @user %>
-      <%= link_to 'Delete', rant_path(rant), method: :delete, class: 'delete-rant-link' %>
+      <%= link_to 'Delete', rant_path(rant), method: :delete, class: 'rant-link' %>
+    <% else %>
+      <%= render partial: 'favorites/favorite_link', locals: {rant: rant} %>
     <% end %>
   </p>
 </div>

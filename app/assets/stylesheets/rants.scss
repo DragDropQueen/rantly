@@ -40,12 +40,18 @@
 .rant-wrapper {
   text-align: right;
 
-  .delete-rant-link {
+  .rant-link {
     padding-right: 15%;
+    margin-top: 0;
   }
 
   .follow-link {
 
+  }
+
+  .rant-link-container {
+    margin-top: 0;
+    margin-bottom: 40px;
   }
 }
 
