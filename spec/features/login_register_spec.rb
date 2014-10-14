@@ -38,4 +38,29 @@ feature 'homepage' do
     expect(page).to have_content 'Username is taken'
     expect(page).to have_content '8 char minimum'
   end
+
+  scenario 'gives empty login errors' do
+    visit '/'
+    click_link 'Login'
+
+    click_button 'LOGIN'
+
+    expect(page).to have_content('Username can\'t be blank')
+    expect(page).to have_content('Password can\'t be blank')
+  end
+
+  scenario 'gives improper login errors' do
+    user = create_user
+
+    visit '/'
+
+    click_link 'Login'
+
+    fill_in 'user_username', with: user.username
+    fill_in 'user_password', with: 'wrong password'
+
+    click_button 'LOGIN'
+
+    expect(page).to have_content('Username or password is incorrect')
+  end
 end

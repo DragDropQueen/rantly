@@ -2,23 +2,28 @@ class SessionsController < ApplicationController
   layout 'signed-out'
 
   def new
-    @user = User.new
+    @session = Session.new(params)
   end
 
   def create
-    @user = User.find_by(:username => params[:user][:username])
+    @session = Session.new(params)
 
-    if @user && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
+    if @session.authenticate
+      set_session
       redirect_to '/dashboard'
     else
-      flash[:notice] = 'Username or password is incorrect'
-      redirect_to new_session_path
+      render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
     redirect_to root_path
+  end
+
+  private
+
+  def set_session
+    session[:user_id] = @session.user.id
   end
 end

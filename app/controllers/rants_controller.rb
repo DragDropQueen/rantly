@@ -32,4 +32,8 @@ class RantsController < ApplicationController
   def rant_params
     params.require(:rant).permit(:title, :rant).merge({user_id: @user.id})
   end
+
+  def index
+    params[:count]
+  end
 end
