@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:notice] = 'Please fill out all fields!'
-      redirect_to edit_user_path
+      render :edit
     end
   end
 

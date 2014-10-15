@@ -4,4 +4,5 @@ class Rant < ActiveRecord::Base
   validates_length_of :rant, minimum: 140
 
   belongs_to :user
+  has_many :favorites
 end
