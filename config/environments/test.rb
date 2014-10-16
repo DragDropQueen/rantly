@@ -1,4 +1,3 @@
-ENV['search_url'] = 'localhost:9200'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
