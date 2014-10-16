@@ -1,4 +1,4 @@
-<% unless rant_is_favorited?(rant) %>
+<% unless is_favorited?(rant) %>
 
 <%= link_to 'Favorite', rant_favorites_path(rant), method: 'POST', class: 'rant-link'  %>
 

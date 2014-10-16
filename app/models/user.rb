@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include Searchable
   has_secure_password
 
   validates_presence_of :username, :first_name, :last_name, :bio, :frequency

@@ -21,6 +21,9 @@ var colorTab = function () {
   if ($('.follow-div').length != 0) {
     $('.follow-link').css('color', '#37731e')
   }
+  if ($('.search-display').length != 0) {
+    $('.search-link').css('color', '#37731e')
+  }
 };
 
 var openHeadermenu = function () {

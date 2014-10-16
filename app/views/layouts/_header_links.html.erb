@@ -2,7 +2,7 @@
     <%= link_to 'Dashboard', dashboard_path, class: 'border dashboard-link' %>
     <%= link_to 'Following', user_follows_path(@user), class: "border follow-link" %>
     <a class="border">Favorites</a>
-    <a>Search</a>
+    <%= link_to 'Search', search_index_path, class: "search-link" %>
   </div>
 
   <div class="button-div">

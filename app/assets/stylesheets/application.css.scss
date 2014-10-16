@@ -29,6 +29,7 @@
 @import "rants";
 @import "follows";
 @import "user_profile";
+@import "search";
 
 .clearfix {
   clear: both;
@@ -113,6 +114,7 @@ body {
   flex-grow: 1;
   text-align: center;
   margin: 5px;
+  @include breaks;
 
   hr {
     margin-top: 30px;

@@ -8,6 +8,6 @@ class RootController < ApplicationController
       render :show
     end
 
-    session[:show_register_notice] ||= true
+    session[:show_register_notice] ||= 'show'
   end
 end

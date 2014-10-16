@@ -1,0 +1,7 @@
+<h1>Search</h1>
+<hr class="long"/>
+
+<%= form_tag("/search", method: "post") do %>
+  <%= text_field_tag :search,  @search.search_text, class: 'search-box' %>
+  <%= submit_tag "SEARCH", class: :button %>
+<% end %>
