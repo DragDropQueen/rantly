@@ -1,3 +1,5 @@
+ENV['search_url'] = 'https://30u5gkne:fq8e2knxqs702q45@boxwood-596101.us-east-1.bonsai.io'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
