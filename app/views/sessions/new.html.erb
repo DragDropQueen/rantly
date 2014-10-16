@@ -1,15 +1,16 @@
 <div class="form-background">
   <h1>Login</h1>
-  <%= form_for @session.user, url: session_path, method: 'post' do |f| %>
+  <%= form_for @session, url: session_path, method: 'post' do |f| %>
     <div class="padding login-form">
-      <p class="error"><%= @session.general_error %></p>
+      <p class="error"><%= @session.errors[:base].first %></p>
+      <p></p>
 
       <%= f.label 'Username' %>
-        <span class="error"><%= @session.username_error %></span>
+        <span class="error"><%= @session.errors[:username].first %></span>
       <%= f.text_field :username, class: 'textfield', autofocus: true %>
       <p></p>
       <%= f.label 'Password' %>
-        <span class="error"><%= @session.password_error %></span>
+        <span class="error"><%= @session.errors[:password].first %></span>
       <%= f.password_field :password, class: 'textfield' %>
 
 

@@ -11,6 +11,12 @@ class FavoritesController < ApplicationController
     redirect_to :back
   end
 
+  def destroy
+    Favorite.destroy(params[:id])
+
+    redirect_to :back
+  end
+
   private
 
   def favorite_params

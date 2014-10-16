@@ -35,4 +35,19 @@ feature 'favoriting' do
     expect(page).to have_content 'Favorited Rants'
     expect(page).to have_content @rant.rant
   end
+
+  scenario 'can unfavorite rants' do
+    within('.rant-wrapper:nth-child(3)') do
+      click_on 'Favorite'
+    end
+
+    click_on 'Unfavorite'
+
+    within '.header' do
+      click_on 'Favorites'
+    end
+
+    expect(page).to have_content 'Favorited Rants'
+    expect(page).to_not have_content @rant.rant
+  end
 end

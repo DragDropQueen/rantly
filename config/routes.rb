@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resource :dashboard, only: 'show'
-  resources :favorites, only: :index
+  resource :dashboard, only: :show
+  resources :favorites, only: [:index, :destroy]
   resources :rants, except: [:new, :index] do
     resources :favorites, only: [:create], shallow: true
   end

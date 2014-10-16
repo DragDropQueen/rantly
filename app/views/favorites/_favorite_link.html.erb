@@ -4,6 +4,6 @@
 
 <% else %>
 
-<a class="rant-link">Unfavorite</a>
+<%= link_to 'Unfavorite', favorite_path(@favorite), method: 'DELETE', class: 'rant-link' %>
 
 <% end %>

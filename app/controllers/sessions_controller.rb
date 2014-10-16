@@ -2,15 +2,15 @@ class SessionsController < ApplicationController
   layout 'signed-out'
 
   def new
-    @session = Session.new(params)
+    @session = Session.new
   end
 
   def create
-    @session = Session.new(params)
+    @session = Session.new(session_params)
 
-    if @session.authenticate
+    if @session.valid?
       set_session
-      redirect_to '/dashboard'
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -23,7 +23,11 @@ class SessionsController < ApplicationController
 
   private
 
+  def session_params
+    params.require(:session).permit(:username, :password)
+  end
+
   def set_session
-    session[:user_id] = @session.user.id
+    session[:user_id] = @session.user_id
   end
 end

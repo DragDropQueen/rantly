@@ -58,8 +58,8 @@ feature 'homepage' do
 
     click_link 'Login'
 
-    fill_in 'user_username', with: user.username
-    fill_in 'user_password', with: 'wrong password'
+    fill_in 'session_username', with: user.username
+    fill_in 'session_password', with: 'wrong password'
 
     click_button 'LOGIN'
 
