@@ -10,5 +10,7 @@ class User < ActiveRecord::Base
   has_many :rants
   has_many :follows, foreign_key: :follower_id
   has_many :follows, foreign_key: :followee_id
+  has_many :favorited_rants, through: :favorites, source: :rant
+  has_many :favorites
 end
 

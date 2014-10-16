@@ -1,6 +1,10 @@
 class FavoritesController < ApplicationController
   before_filter :set_sidebar, :require_authentication!
 
+  def index
+
+  end
+
   def create
     Favorite.create!(favorite_params)
 

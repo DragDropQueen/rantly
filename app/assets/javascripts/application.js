@@ -16,13 +16,16 @@
 
 var colorTab = function () {
   if ($('.dashboard-div').length != 0) {
-    $('.dashboard-link').css('color', '#37731e')
+    $('.dashboard-link').css('color', '#257340')
   }
   if ($('.follow-div').length != 0) {
-    $('.follow-link').css('color', '#37731e')
+    $('.follow-link').css('color', '#257340')
   }
   if ($('.search-display').length != 0) {
-    $('.search-link').css('color', '#37731e')
+    $('.search-link').css('color', '#257340')
+  }
+  if ($('.favorite-div').length != 0) {
+    $('.favorite-link').css('color', '#257340')
   }
 };
 

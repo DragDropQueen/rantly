@@ -51,3 +51,4 @@ gem 'rails_12factor'
 
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
+gem 'bonsai-elasticsearch-rails'
