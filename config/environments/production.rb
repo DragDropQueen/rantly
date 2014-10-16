@@ -1,3 +1,4 @@
+ENV['search_url'] = ENV['BONSAI_URL']
 
 
 Rails.application.configure do
