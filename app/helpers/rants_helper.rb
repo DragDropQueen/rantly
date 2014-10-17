@@ -8,4 +8,12 @@ module RantsHelper
       rant.favorites.count
     }.reverse
   end
+
+  def get_mentioned_rants
+    string = '@' + @user.username
+
+    response = Rant.search query: { match: { rant: string } }
+
+    response.records.records
+  end
 end

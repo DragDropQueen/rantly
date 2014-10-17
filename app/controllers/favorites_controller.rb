@@ -2,7 +2,6 @@ class FavoritesController < ApplicationController
   before_filter :set_sidebar, :require_authentication!
 
   def index
-
   end
 
   def create
@@ -20,6 +19,6 @@ class FavoritesController < ApplicationController
   private
 
   def favorite_params
-    {user_id: @user.id, rant_id: params[:rant_id]}
+    params.permit(:rant_id).merge({user_id: @user.id})
   end
 end

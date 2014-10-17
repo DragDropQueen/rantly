@@ -19,8 +19,6 @@
     <% get_user_favorited_rants(@profile_user).each do |rant| %>
       <h3><%= rant.title %></h3>
 
-      <p><%= rant.favorites.count %></p>
-
       <p><%= rant.rant %></p>
       <%= render partial: 'favorites/favorite_link', locals: {rant: rant} %>
 

@@ -1,7 +1,15 @@
-  <div class="dashboard-div focus">
-    <h1>Latest Rants</h1>
-    <%= render get_latest_rants %>
+<div class="dashboard-div focus">
+  <h1>Latest Rants</h1>
+  <%= render get_latest_rants %>
+  <hr>
+  <% if get_mentioned_rants.length > 0 %>
+    <h1>Mentioned</h1>
+    <%= render get_mentioned_rants %>
     <hr>
-    <h1>My Rants</h1>
-    <%= render @user.rants %>
-  </div>
+  <% end %>
+
+  <h1>My Rants</h1>
+  <%= render @user.rants %>
+
+
+</div>
