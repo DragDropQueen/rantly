@@ -89,13 +89,14 @@
 }
 
 .progress {
-  max-width: 600px;
-  margin:    0.2em 0 0.2em 0;
+  max-width: 100%;
 }
 
 .progress .bar {
-  height:  1.2em;
-  padding: 0.2em;
+  height:  25px;
+  padding: 5px;
   color:   white;
+  font-size: 14px;
   display: none;
+  background-color: $green;
 }
