@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @direct_post = CloudFileUploader.create_presigned_s3_object
     @user = User.new
   end
 
@@ -18,11 +19,13 @@ class UsersController < ApplicationController
       flash[:notice] = 'You have registered successfully!'
       redirect_to root_path
     else
+      @direct_post = CloudFileUploader.create_presigned_s3_object
       render :new
     end
   end
 
   def edit
+    @direct_post = CloudFileUploader.create_presigned_s3_object
     render layout: 'edit_user' if require_authentication!
   end
 
@@ -34,6 +37,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:notice] = 'Please fill out all fields!'
+      @direct_post = CloudFileUploader.create_presigned_s3_object
       render :edit
     end
   end
@@ -41,6 +45,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params[:user].permit(:username, :password, :first_name, :last_name, :bio, :frequency)
+    params[:user].permit(:username, :password, :first_name, :last_name, :bio, :frequency, :avatar)
   end
 end

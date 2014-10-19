@@ -40,7 +40,6 @@ var openHeadermenu = function () {
   });
 
   $('body').click(function(){
-    console.log('click');
     $('.header-menu').hide();
   });
 };
