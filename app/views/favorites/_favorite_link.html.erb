@@ -2,8 +2,12 @@
 
 <%= link_to 'Favorite', rant_favorites_path(rant), method: 'POST', class: 'rant-link'  %>
 
+  <span>❤ <%= rant.favorites.count %></span>
+
 <% else %>
 
 <%= link_to 'Unfavorite', favorite_path(@favorite), method: 'DELETE', class: 'rant-link' %>
+
+  <span>❤ <%= rant.favorites.count %></span>
 
 <% end %>

@@ -55,3 +55,4 @@ gem 'bonsai-elasticsearch-rails'
 
 gem 'aws-sdk'
 
+gem 'redcarpet'

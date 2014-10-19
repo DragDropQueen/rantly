@@ -16,15 +16,10 @@
       </div>
     </div>
 
-
-
-
     <br/>
 
-    <p><%= @display_rant.rant %></p>
-
+    <p><%= MarkdownParser.new(@display_rant.rant).render_html %></p>
     <hr>
-
   </div>
 </div>
 

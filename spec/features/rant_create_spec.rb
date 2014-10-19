@@ -41,7 +41,6 @@ feature 'dashboard' do
     expect(page).to have_content('Rant: is too short (minimum is 140 characters)')
   end
 
-
   scenario 'can see other user\'s rants' do
     @other_user = create_other_user
     rant = create_rant(@other_user)
@@ -54,5 +53,13 @@ feature 'dashboard' do
     within '.rant-wrapper:nth-child(2)' do
       expect(page).to_not have_link('Delete')
     end
+  end
+
+  scenario 'renders rants with markdown properly' do
+    rant = create_rant(@user, {rant: "the truth is worse than *anything* i could bring myself to do to you. I walk this house in your shoes, i know it's strange. it's a strange way of saying i know i'm supposed to love you. i'm supposed to love you."})
+
+    login(@user)
+
+    expect(page).to have_content("the truth is worse than anything i could bring myself to do to you. I walk this house in your shoes, i know it's strange. it's a strange way of saying i know i'm supposed to love you. i'm supposed to love you.")
   end
 end

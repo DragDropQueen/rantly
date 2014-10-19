@@ -50,4 +50,16 @@ feature 'favoriting' do
     expect(page).to have_content 'Favorited Rants'
     expect(page).to_not have_content @rant.rant
   end
+
+  scenario 'can see the number of times a rant has been favorited' do
+    within('.rant-wrapper:nth-child(3)') do
+      click_on 'Favorite'
+    end
+
+    expect(page).to have_content '❤ 1'
+
+    click_on 'Unfavorite'
+
+    expect(page).to have_content '❤ 0'
+  end
 end

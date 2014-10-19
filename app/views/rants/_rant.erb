@@ -9,7 +9,7 @@
       <% end %>
     </div>
     <a href="/rants/<%= rant.id %>" class="right-blurb">
-      <%= truncate(rant.rant, :length => 300) %>
+      <%= truncate(MarkdownParser.new(rant.rant).render_html, :length => 300) %>
     </a>
 
 
