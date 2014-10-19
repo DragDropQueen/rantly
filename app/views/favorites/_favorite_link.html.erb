@@ -1,13 +1,13 @@
 <% unless is_favorited?(rant) %>
 
-<%= link_to 'Favorite', rant_favorites_path(rant), method: 'POST', class: 'rant-link'  %>
+  <span class="favorite-count">❤ <%= rant.favorites.count %></span>
 
-  <span>❤ <%= rant.favorites.count %></span>
+  <%= link_to 'Favorite', rant_favorites_path(rant), method: 'POST', class: 'rant-link' %>
 
 <% else %>
 
-<%= link_to 'Unfavorite', favorite_path(@favorite), method: 'DELETE', class: 'rant-link' %>
+  <span class="favorite-count">❤ <%= rant.favorites.count %></span>
 
-  <span>❤ <%= rant.favorites.count %></span>
+  <%= link_to 'Unfavorite', favorite_path(@favorite), method: 'DELETE', class: 'rant-link' %>
 
 <% end %>

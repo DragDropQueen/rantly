@@ -1,5 +1,5 @@
-<div class="rant-show focus">
-  <div class="rant-port">
+<div class="focus">
+  <div class="rant-show">
     <h1><%= @display_rant.title %></h1>
 
     <%= render partial: 'favorites/favorite_link', locals: {rant: @display_rant} %>
@@ -18,8 +18,10 @@
 
     <br/>
 
-    <p><%= MarkdownParser.new(@display_rant.rant).render_html %></p>
+    <p><%= to_markdown(@display_rant.rant) %></p>
     <hr>
+
+    <%= render partial: 'comments/comments_and_form', locals: {commented: @display_rant} %>
   </div>
 </div>
 

@@ -24,6 +24,7 @@ class RantsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @display_rant = Rant.find(params[:id])
   end
 

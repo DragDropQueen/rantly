@@ -1,0 +1,13 @@
+<%= form_for [commented, @comment], html: {class: 'comment-form'} do |f| %>
+  <%= f.text_field :body, placeholder: 'Enter your comments here...' %>
+
+  <%= f.submit 'RANT BACK', class: 'button' %>
+<% end %>
+
+
+<% commented.comments.each do |comment| %>
+  <div class="comment">
+    <%= image_tag comment.user.avatar %>
+    <p><%= truncate(comment.body, length: 150) %></p>
+  </div>
+<% end %>

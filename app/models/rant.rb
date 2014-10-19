@@ -1,5 +1,5 @@
 class Rant < ActiveRecord::Base
-  include Searchable
+  include Searchable, Commentable
 
   validates_presence_of :title, :rant
   validates_length_of :title, maximum: 50

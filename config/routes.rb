@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :destroy]
   resources :rants, except: [:new, :index] do
     resources :favorites, only: [:create], shallow: true
+    resources :comments, only: [:create]
   end
   resources :search, only: [:index, :show, :create]
   resource :session, only: [:create, :new, :destroy]

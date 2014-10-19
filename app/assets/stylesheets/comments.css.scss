@@ -1,0 +1,25 @@
+.comment-form {
+  input {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  .button {
+    width: 110px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 10px;
+  }
+}
+
+.comment {
+  @extend .clearfix;
+  display: block;
+  margin-top: 40px;
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+}

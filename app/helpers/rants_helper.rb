@@ -16,4 +16,12 @@ module RantsHelper
 
     response.records.records
   end
+
+  def to_markdown(text)
+    text = sanitize(text)
+
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+
+    markdown.render(text).html_safe
+  end
 end

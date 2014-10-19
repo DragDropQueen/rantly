@@ -6,13 +6,23 @@ feature 'rant show' do
     @user = create_user
     @rant = create_rant(@user)
     login(@user)
+
+    click_on @rant.rant
   end
 
   scenario 'can view a rant' do
-    click_on @rant.rant
-
     expect(page).to have_content(@rant.rant)
     expect(page).to have_content(@rant.title)
     expect(page).to have_selector('.rant-show')
+  end
+
+  scenario 'can comment on a rant' do
+    comment = "i'm a comment!"
+
+    fill_in 'comment_body', with: comment
+
+    click_on 'RANT BACK'
+
+    expect(page).to have_content(comment)
   end
 end
