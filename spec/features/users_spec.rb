@@ -10,11 +10,12 @@ feature 'interactions with other users' do
   end
 
   scenario 'can follow another user', js: true do
-    expect(page).to have_link('Unfollow')
+    click_on 'Follow'
 
     within '.header' do
       click_on 'Following'
     end
+
     expect(page).to have_content('Following')
     expect(page).to have_content(full_name(@other_user))
     expect(page).to have_link('Unfollow')

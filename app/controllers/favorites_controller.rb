@@ -5,20 +5,22 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    Favorite.create!(favorite_params)
+    favorite = Favorite.create!(favorite_params)
 
-    redirect_to :back
+    render json: favorite
   end
 
   def destroy
-    Favorite.destroy(params[:id])
+    favorite = Favorite.find_by(favorite_params)
 
-    redirect_to :back
+    favorite.destroy
+
+    render json: favorite
   end
 
   private
 
   def favorite_params
-    params.permit(:rant_id).merge({user_id: @user.id})
+    {user_id: @user.id, rant_id: params[:id]}
   end
 end

@@ -25,7 +25,7 @@ var colorTab = function () {
     $('.search-link').css('color', '#257340');
   }
   if ($('.favorite-div').length != 0) {
-    $('.favorite-link').css('color', '#257340');
+    $('.favorite-header-link').css('color', '#257340');
   }
 };
 

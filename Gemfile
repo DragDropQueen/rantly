@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password

@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'capybara/rails'
 
-feature 'favoriting' do
+feature 'favoriting', js: true do
   before do
     @user = create_user
     @rant = create_rant(@user)
@@ -12,7 +12,7 @@ feature 'favoriting' do
     login(@logged_in_user)
   end
 
-  scenario 'can favorite rants and have them sorted on user profiles' do
+  scenario 'can favorite rants and have them sorted on user profiles', js: true do
     within('.rant-wrapper:nth-child(3)') do
       click_on 'Favorite'
       click_on @user.first_name
@@ -23,7 +23,7 @@ feature 'favoriting' do
     end
   end
 
-  scenario 'can view favorited rants on the favorite tab' do
+  scenario 'can view favorited rants on the favorite tab', js: true do
     within('.rant-wrapper:nth-child(3)') do
       click_on 'Favorite'
     end
@@ -36,7 +36,7 @@ feature 'favoriting' do
     expect(page).to have_content @rant.rant
   end
 
-  scenario 'can unfavorite rants' do
+  scenario 'can unfavorite rants', js: true do
     within('.rant-wrapper:nth-child(3)') do
       click_on 'Favorite'
     end
@@ -51,7 +51,7 @@ feature 'favoriting' do
     expect(page).to_not have_content @rant.rant
   end
 
-  scenario 'can see the number of times a rant has been favorited' do
+  scenario 'can see the number of times a rant has been favorited', js: true do
     within('.rant-wrapper:nth-child(3)') do
       click_on 'Favorite'
     end

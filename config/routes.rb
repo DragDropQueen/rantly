@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
   resource :dashboard, only: :show
-  resources :favorites, only: [:index, :destroy]
+  resources :favorites, only: [:index]
   resources :rants, except: [:new, :index] do
-    resources :favorites, only: [:create], shallow: true
     resources :comments, only: [:create]
   end
   resources :search, only: [:index, :show, :create]
@@ -15,6 +14,9 @@ Rails.application.routes.draw do
 
   post '/follows/:id', to: 'follows#create', as: 'follow'
   delete '/follows/:id', to: 'follows#destroy'
+
+  post '/favorites/:id', to: 'favorites#create', as: 'favorite'
+  delete '/favorites/:id', to: 'favorites#destroy'
 
   root 'root#show', via: 'get'
 end
