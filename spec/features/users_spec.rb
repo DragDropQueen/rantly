@@ -9,8 +9,7 @@ feature 'interactions with other users' do
     login(@user)
   end
 
-  scenario 'can follow another user' do
-    click_on 'Follow'
+  scenario 'can follow another user', js: true do
     expect(page).to have_link('Unfollow')
 
     within '.header' do
@@ -21,8 +20,9 @@ feature 'interactions with other users' do
     expect(page).to have_link('Unfollow')
   end
 
-  scenario 'can unfollow other users' do
+  scenario 'can unfollow other users', js: true do
     click_on 'Follow'
+
     click_on 'Unfollow'
 
     within '.header' do

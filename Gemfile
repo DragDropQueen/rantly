@@ -33,6 +33,7 @@ group :development, :test do
   gem 'launchy'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'selenium-webdriver'
 end
 
 # Use ActiveModel has_secure_password
@@ -56,3 +57,4 @@ gem 'bonsai-elasticsearch-rails'
 gem 'aws-sdk'
 
 gem 'redcarpet'
+

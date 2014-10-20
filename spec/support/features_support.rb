@@ -1,5 +1,4 @@
 module FeatureHelpers
-
   def login(user)
     visit root_path
     click_link 'Login'
@@ -8,5 +7,4 @@ module FeatureHelpers
     click_button 'LOGIN'
     expect(page).to have_content("#{user.first_name} #{user.last_name}")
   end
-
 end

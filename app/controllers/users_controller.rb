@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def edit
     @direct_post = CloudFileUploader.create_presigned_s3_object
+
     render layout: 'edit_user' if require_authentication!
   end
 
@@ -38,6 +39,7 @@ class UsersController < ApplicationController
     else
       flash[:notice] = 'Please fill out all fields!'
       @direct_post = CloudFileUploader.create_presigned_s3_object
+
       render :edit
     end
   end

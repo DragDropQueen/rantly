@@ -9,9 +9,12 @@ Rails.application.routes.draw do
   resources :search, only: [:index, :show, :create]
   resource :session, only: [:create, :new, :destroy]
   resources :users, only: :show, as: 'users' do
-    resources :follows, only: [:index, :create, :destroy], shallow: true
+    resources :follows, only: [:index]
   end
   resource :user, only: [:create, :new, :edit, :update]
+
+  post '/follows/:id', to: 'follows#create', as: 'follow'
+  delete '/follows/:id', to: 'follows#destroy'
 
   root 'root#show', via: 'get'
 end

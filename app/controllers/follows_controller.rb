@@ -6,15 +6,19 @@ class FollowsController < ApplicationController
   end
 
   def create
-    Follow.create!({
+    follow = Follow.create!({
       follower_id: @user.id,
-      followee_id: params[:user_id]
+      followee_id: params[:id]
     })
-    redirect_to :back
+
+    render json: follow
   end
 
   def destroy
-    Follow.find(params[:id]).destroy
-    redirect_to :back
+    follow = Follow.find_by(followee_id: params[:id], follower_id: @user.id)
+
+    follow.destroy
+
+    render json: follow
   end
 end

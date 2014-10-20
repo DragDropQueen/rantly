@@ -19,7 +19,7 @@ var colorTab = function () {
     $('.dashboard-link').css('color', '#257340');
   }
   if ($('.follow-div').length !== 0) {
-    $('.follow-link').css('color', '#257340');
+    $('.follow-header-link').css('color', '#257340');
   }
   if ($('.search-display').length !== 0) {
     $('.search-link').css('color', '#257340');
