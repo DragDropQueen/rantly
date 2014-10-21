@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
   def show
     require_authentication!; set_sidebar
+
+    @comment = Comment.new
+
     @profile_user = User.find(params[:id])
     respond_to do |format|
       format.html {render layout: 'application'}

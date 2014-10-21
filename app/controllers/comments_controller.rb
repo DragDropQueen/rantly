@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
       @comment = rant.comments.build(comment_params)
     else
       user = User.find(params[:user_id])
-      @comment = user.comments.build(comment_params)
+      @comment = Comment.new(comment_params.merge({commented_id: user.id, commented_type: 'User'}))
     end
   end
 end

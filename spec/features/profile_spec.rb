@@ -36,4 +36,16 @@ feature 'profile' do
     expect(page).to have_content(@rant.rant)
     expect(page).to have_content('Favorite')
   end
+
+  scenario 'can comment on a user\'s profile' do
+    click_on @rant.rant
+
+    click_on @other_user.first_name
+
+    fill_in 'comment_body', with: 'comment rawr'
+
+    click_on 'RANT BACK'
+
+    expect(page).to have_content('comment rawr')
+  end
 end

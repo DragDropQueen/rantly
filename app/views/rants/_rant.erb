@@ -3,10 +3,11 @@
     <div class="left-blurb">
       <%= render partial: 'users/profile_link', locals: {user: rant.user} %>
       <%= image_tag rant.user.avatar %>
-      <% unless rant.user == @user %>
 
+      <% unless rant.user == @user %>
         <%= render partial: 'follows/follow_link', locals: {user: rant.user} %>
       <% end %>
+
     </div>
     <a href="/rants/<%= rant.id %>" class="right-blurb">
       <%= to_markdown(truncate(rant.rant, length: 300)) %>

@@ -17,9 +17,16 @@
   @extend .clearfix;
   display: block;
   margin-top: 40px;
+  text-align: left;
 
   img {
     height: 100px;
     width: 100px;
+    float: left;
+    margin-right: 20px;
+  }
+
+  p {
+    display: inline-block;
   }
 }
