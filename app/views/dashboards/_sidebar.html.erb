@@ -7,14 +7,14 @@
   <%= form_for @rant do |f| %>
 
     <%= f.label 'A rant about:' %>
-    <p class="error"><%= @rant.errors[:title].first %></p>
+    <p class="error title-error"><%= @rant.errors[:title].first %></p>
     <%= f.text_field :title, class: 'textfield' %>
 
     <%= f.label 'Rant:' %>
-    <p class="error"><%= @rant.errors[:rant].first %></p>
+    <p class="error rant-error"><%= @rant.errors[:rant].first %></p>
     <%= f.text_area :rant, class: 'textarea' %>
 
-    <%= f.submit 'RANT', class: 'button' %>
+    <%= f.submit 'RANT', class: 'button', id: 'rant-button' %>
 
   <% end %>
 </div>

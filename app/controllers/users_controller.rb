@@ -4,7 +4,10 @@ class UsersController < ApplicationController
   def show
     require_authentication!; set_sidebar
     @profile_user = User.find(params[:id])
-    render layout: 'application'
+    respond_to do |format|
+      format.html {render layout: 'application'}
+      format.json {render json: @profile_user}
+    end
   end
 
   def new

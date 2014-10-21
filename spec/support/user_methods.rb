@@ -5,8 +5,7 @@ def create_user(overrides = {})
                  first_name: 'Blake',
                  last_name: 'Belladona',
                  bio: 'former member of the White Fang',
-                 frequency: 'Daily',
-                 avatar: '200.jpeg'
+                 frequency: 'Daily'
                }.merge(overrides))
 end
 
@@ -17,8 +16,7 @@ def create_other_user(overrides = {})
                  first_name: 'gestalt',
                  last_name: 'replicant',
                  bio: 'part shade',
-                 frequency: 'Daily',
-                 avatar: '200.jpeg'
+                 frequency: 'Daily'
                }.merge(overrides))
 end
 

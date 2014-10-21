@@ -4,9 +4,9 @@ class RantsController < ApplicationController
   def create
     @rant = Rant.new(rant_params)
     if @rant.save
-      redirect_to root_path, notice: 'Your rant has been posted!'
+      render json: @rant
     else
-      render :'dashboards/show'
+      raise
     end
   end
 
