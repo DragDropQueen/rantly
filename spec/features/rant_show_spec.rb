@@ -25,4 +25,8 @@ feature 'rant show' do
 
     expect(page).to have_content(comment)
   end
+
+  scenario 'can tweet a link to a rant', js: true do
+    click_on 'b'
+  end
 end

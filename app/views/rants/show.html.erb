@@ -7,19 +7,34 @@
     <hr class="long-rule">
     <%= image_tag @display_rant.user.avatar %>
 
+
     <div class="subheader">
       <h3>by <%= link_to full_name(@display_rant.user), user_path(@display_rant.user) %></h3>
 
-      <div class="button-div">
-        <button class="blue">Tweet</button>
-        <button class="red">Spam</button>
-      </div>
+      <button class="red">Spam</button>
+    </div>
+    <br>
+
+    <%= to_markdown(@display_rant.rant) %>
+
+    <div class="button-div">
+
+      <script>!function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = p + '://platform.twitter.com/widgets.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }(document, 'script', 'twitter-wjs');</script>
+
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out the awesome rant '<%= @display_rant.title %>' here:">Tweet
+      </a>
     </div>
 
-    <br/>
-
-    <p><%= to_markdown(@display_rant.rant) %></p>
     <hr>
+
 
     <%= render partial: 'comments/comments_and_form', locals: {commented: @display_rant} %>
   </div>
