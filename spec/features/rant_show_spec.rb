@@ -29,4 +29,12 @@ feature 'rant show' do
   scenario 'can tweet a link to a rant', js: true do
     click_on 'b'
   end
+
+  scenario 'can mark a rant as spam' do
+    click_on 'Spam'
+
+    click_on 'Rant.ly'
+
+    expect(page).to_not have_content(@rant.rant)
+  end
 end

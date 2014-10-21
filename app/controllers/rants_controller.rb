@@ -10,6 +10,14 @@ class RantsController < ApplicationController
     end
   end
 
+  def update
+    @rant = Rant.find(params[:id])
+
+    @rant.update!({spam: true})
+
+    redirect_to dashboard_path, notice: "#{@rant.title} has been marked as spam."
+  end
+
   def destroy
     @rant = Rant.find(params[:id])
 

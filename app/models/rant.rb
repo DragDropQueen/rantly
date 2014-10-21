@@ -7,4 +7,6 @@ class Rant < ActiveRecord::Base
 
   belongs_to :user
   has_many :favorites
+
+  default_scope { where(spam: false) }
 end

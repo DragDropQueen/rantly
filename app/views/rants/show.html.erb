@@ -11,13 +11,13 @@
     <div class="subheader">
       <h3>by <%= link_to full_name(@display_rant.user), user_path(@display_rant.user) %></h3>
 
-      <button class="red">Spam</button>
+      <%= button_to 'Spam', rant_path, method: :patch, class: 'red' %>
+
     </div>
     <br>
 
     <%= to_markdown(@display_rant.rant) %>
 
-    <div class="button-div">
 
       <script>!function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -31,7 +31,7 @@
 
       <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out the awesome rant '<%= @display_rant.title %>' here:">Tweet
       </a>
-    </div>
+
 
     <hr>
 

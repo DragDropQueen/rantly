@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: :show
   resources :favorites, only: [:index]
-  resources :rants, except: [:new, :index] do
+  resources :rants, except: [:new, :index, :edit] do
     resources :comments, only: [:create]
   end
   resources :search, only: [:index, :show, :create]
