@@ -1,13 +1,17 @@
-<% unless is_favorited?(rant) %>
-
-  <span class="favorite-count">❤ <span id='favorite-count' class='<%= rant.favorites.count %>'><%= rant.favorites.count %></span></span>
-
-  <%= link_to 'Favorite', favorite_path(rant), method: 'POST', class: 'rant-link favorite-link' %>
-
+<% if rant.user == @user %>
+  <%= link_to 'Delete', rant_path(rant), method: :delete, class: 'rant-link' %>
 <% else %>
+  <% unless is_favorited?(rant) %>
 
-  <span class="favorite-count">❤ <span id='favorite-count' class='<%= rant.favorites.count - 1 %>'><%= rant.favorites.count %></span></span>
+    <span class="favorite-count">❤ <span id='favorite-count' class='<%= rant.favorites.count %>'><%= rant.favorites.count %></span></span>
 
-  <%= link_to 'Unfavorite', favorite_path(rant), method: 'DELETE', class: 'rant-link unfavorite-link' %>
+    <%= link_to 'Favorite', favorite_path(rant), method: 'POST', class: 'rant-link favorite-link' %>
 
+  <% else %>
+
+    <span class="favorite-count">❤ <span id='favorite-count' class='<%= rant.favorites.count - 1 %>'><%= rant.favorites.count %></span></span>
+
+    <%= link_to 'Unfavorite', favorite_path(rant), method: 'DELETE', class: 'rant-link unfavorite-link' %>
+
+  <% end %>
 <% end %>

@@ -1,4 +1,5 @@
 <div class="rant-wrapper">
+  <h3><%= rant.title %></h3>
   <div class="rant-blurb">
     <div class="left-blurb">
       <%= render partial: 'users/profile_link', locals: {user: rant.user} %>
@@ -16,11 +17,7 @@
 
   </div>
   <p class="rant-link-container">
-    <% if rant.user == @user %>
-      <%= link_to 'Delete', rant_path(rant), method: :delete, class: 'rant-link' %>
-    <% else %>
-      <%= render partial: 'favorites/favorite_link', locals: {rant: rant} %>
-    <% end %>
+    <%= render partial: 'favorites/favorite_link', locals: {rant: rant} %>
   </p>
 </div>
 

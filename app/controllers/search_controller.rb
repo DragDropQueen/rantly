@@ -6,7 +6,9 @@ class SearchController < ApplicationController
   end
 
   def create
-    redirect_to '/search/' + params[:search]
+    search = params[:search].gsub(' ', '_')
+
+    redirect_to '/search/' + search
   end
 
   def show

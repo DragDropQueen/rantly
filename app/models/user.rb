@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   validates_length_of :password, minimum: 8, message: '8 char minimum', on: :create
 
   has_many :rants
-  has_many :follows, foreign_key: :follower_id
-  has_many :follows, foreign_key: :followee_id
+  has_many :followers, class_name: 'Follows', foreign_key: :follower_id
+  has_many :followees, class_name: 'Follows', foreign_key: :followee_id
   has_many :favorited_rants, through: :favorites, source: :rant
   has_many :favorites
 end

@@ -24,4 +24,8 @@ module RantsHelper
 
     markdown.render(text).html_safe
   end
+
+  def link_hashtags
+
+  end
 end

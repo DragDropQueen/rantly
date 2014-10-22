@@ -28,4 +28,8 @@ feature 'searching' do
     expect(page).to have_content(@user.first_name)
     expect(page).to have_link('Delete')
   end
+
+  scenario 'can search by hashtags' do
+    # @rant = create_rant({rant: ''})
+  end
 end
