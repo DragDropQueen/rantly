@@ -5,9 +5,9 @@
     <div class="padding">
       <div class="register-flex">
         <div class="form-right">
-          <%= f.label 'Username' %>
-          <p class="error"><%= @user.errors[:username].first %></p>
-          <%= f.text_field :username, class: 'textfield', autofocus: true %>
+          <%= f.label 'Email' %>
+          <p class="error"><%= @user.errors[:email].first %></p>
+          <%= f.email_field :email, class: 'textfield', autofocus: true %>
 
           <%= f.label 'First name' %>
           <p class="error"><%= @user.errors[:first_name].first %></p>

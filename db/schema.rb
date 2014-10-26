@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021204645) do
+ActiveRecord::Schema.define(version: 20141025150506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20141021204645) do
 
   add_index "comments", ["commented_id"], name: "index_comments_on_commented_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "confirmations", force: true do |t|
+    t.integer "user_id"
+    t.string  "token"
+    t.boolean "confirmed", default: false
+  end
+
+  add_index "confirmations", ["user_id"], name: "index_confirmations_on_user_id", using: :btree
 
   create_table "favorites", force: true do |t|
     t.integer  "rant_id"
@@ -59,7 +67,6 @@ ActiveRecord::Schema.define(version: 20141021204645) do
   add_index "rants", ["user_id"], name: "index_rants_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "username"
     t.string   "password_digest"
     t.string   "first_name"
     t.string   "last_name"
@@ -68,6 +75,8 @@ ActiveRecord::Schema.define(version: 20141021204645) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar",          default: "http://sw-rantly.s3.amazonaws.com/uploads/32a365f1-7cf4-4a76-9030-55bcef22b919/200.jpeg"
+    t.string   "email"
+    t.boolean  "active",          default: false
   end
 
 end

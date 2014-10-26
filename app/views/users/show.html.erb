@@ -19,7 +19,7 @@
     <% get_user_favorited_rants(@profile_user).each do |rant| %>
       <h3><%= rant.title %></h3>
 
-      <%= to_markdown(truncate(rant.rant, length: 300)) %>
+      <%= render_rant(truncate(rant.rant, length: 300)) %>
       <%= render partial: 'favorites/favorite_link', locals: {rant: rant} %>
 
     <% end %>

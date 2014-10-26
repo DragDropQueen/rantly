@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
 
+
     if @session.valid?
       set_session
       redirect_to dashboard_path
@@ -24,7 +25,7 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:username, :password)
+    params.require(:session).permit(:email, :password)
   end
 
   def set_session

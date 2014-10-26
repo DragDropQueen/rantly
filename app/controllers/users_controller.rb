@@ -22,7 +22,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:show_register_notice] = 'nope'
-      flash[:notice] = 'You have registered successfully!'
+      @user.create_confirmation_and_send_email
+      flash[:notice] = 'You have registered successfully! Please check your email for the next steps'
       redirect_to root_path
     else
       @direct_post = CloudFileUploader.create_presigned_s3_object
@@ -53,6 +54,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params[:user].permit(:username, :password, :first_name, :last_name, :bio, :frequency, :avatar)
+    params[:user].permit(:email, :password, :first_name, :last_name, :bio, :frequency, :avatar)
   end
 end

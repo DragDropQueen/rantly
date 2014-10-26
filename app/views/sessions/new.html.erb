@@ -5,9 +5,9 @@
       <p class="error"><%= @session.errors[:base].first %></p>
       <p></p>
 
-      <%= f.label 'Username' %>
-        <span class="error"><%= @session.errors[:username].first %></span>
-      <%= f.text_field :username, class: 'textfield', autofocus: true %>
+      <%= f.label 'Email' %>
+        <span class="error"><%= @session.errors[:email].first %></span>
+      <%= f.email_field :email, class: 'textfield', autofocus: true %>
       <p></p>
       <%= f.label 'Password' %>
         <span class="error"><%= @session.errors[:password].first %></span>

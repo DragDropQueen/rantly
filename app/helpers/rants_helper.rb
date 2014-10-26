@@ -4,28 +4,37 @@ module RantsHelper
   end
 
   def get_user_favorited_rants(user)
-    Rant.where(user_id: user.id).sort_by {|rant|
+    Rant.where(user_id: user.id).sort_by { |rant|
       rant.favorites.count
     }.reverse
   end
 
   def get_mentioned_rants
-    string = '@' + @user.username
+    string = '@' + @user.email
 
-    response = Rant.search query: { match: { rant: string } }
+    response = Rant.search string
 
     response.records.records
   end
 
-  def to_markdown(text)
+  def render_rant(text)
     text = sanitize(text)
 
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
 
-    markdown.render(text).html_safe
-  end
+    text = markdown.render(text)
 
-  def link_hashtags
+    tags = text.scan(/#\w+/)
 
+    puts tags
+
+    tags.each { |tag|
+      unless tag == '#39'
+        url = tag.gsub('#', '')
+        text.gsub!(tag, "<a href='/search/tagged-#{url}'>#{tag}</a>")
+      end
+    }
+
+    text.html_safe
   end
 end

@@ -1,22 +1,24 @@
 def create_user(overrides = {})
   User.create!({
-                 username: 'monochrome',
+                 email: 'monochrome@something.com',
                  password: 'schnee337',
                  first_name: 'Blake',
                  last_name: 'Belladona',
                  bio: 'former member of the White Fang',
-                 frequency: 'Daily'
+                 frequency: 'Daily',
+                 active: true
                }.merge(overrides))
 end
 
 def create_other_user(overrides = {})
   User.create!({
-                 username: 'kaine',
+                 email: 'kaine@something.com',
                  password: 'nier1337',
                  first_name: 'gestalt',
                  last_name: 'replicant',
                  bio: 'part shade',
-                 frequency: 'Daily'
+                 frequency: 'Daily',
+                 active: true
                }.merge(overrides))
 end
 

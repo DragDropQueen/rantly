@@ -2,24 +2,31 @@ class Session
   include ActiveModel::Validations
   include ActiveModel::Conversion
 
-  attr_accessor :username, :password
+  attr_accessor :email, :password
 
-  validates :username, :password, presence: true
-  validate 'user_found?'
+  validates :email, :password, presence: true
+  validate 'user_found?', 'user_active?'
 
   def initialize(params = {})
-    @username = params[:username]
+    @email = params[:email]
     @password = params[:password]
   end
 
   def user_found?
-    user = User.find_by(username: username)
-    unless user && user.authenticate(password) || username == '' || password == ''
-      errors.add(:base, 'Username or password is incorrect')
+    user = User.find_by(email: email)
+    unless user && user.authenticate(password) || email == '' || password == ''
+      errors.add(:base, 'Email or password is incorrect')
+    end
+  end
+
+  def user_active?
+    user = User.find_by(email: email)
+    unless password == '' || !user.authenticate(password) || user.active
+      errors.add(:base, 'This account is inactive')
     end
   end
 
   def user_id
-    User.find_by(username: username).id
+    User.find_by(email: email).id
   end
 end

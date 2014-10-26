@@ -9,4 +9,5 @@ class Rant < ActiveRecord::Base
   has_many :favorites
 
   default_scope { where(spam: false) }
+
 end

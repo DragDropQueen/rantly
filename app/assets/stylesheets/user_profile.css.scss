@@ -1,11 +1,11 @@
 .show-user-profile {
   padding: 10px;
 
-  .favorite-link {
-    float: right
+  .favorite-link, .favorite-count, .unfavorite-link {
+      text-align: center;
   }
 
-  .follow-link {
+  .follow-link, .unfollow-link {
     margin-top: 55px;
     float: right;
   }

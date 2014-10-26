@@ -2,7 +2,7 @@ class Search
   attr_reader :search_text
 
   def initialize(text = '')
-    @search_text = text.gsub('_', ' ')
+    @search_text = text.gsub('_', ' ').gsub('tagged-', '#')
   end
 
   def get_search_results

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :confirmations, only: :show
   resource :dashboard, only: :show
   resources :favorites, only: [:index]
   resources :rants, except: [:new, :index, :edit] do

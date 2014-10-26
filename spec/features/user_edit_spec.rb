@@ -12,7 +12,7 @@ feature 'profile' do
     expect(find_field('user_first_name').value).to eq @user.first_name
     expect(find_field('user_last_name').value).to eq @user.last_name
     expect(page).to have_content @user.bio
-    expect(find_field('user_username').value).to eq @user.username
+    expect(find_field('user_email').value).to eq @user.email
     expect(has_checked_field?('user_frequency_daily')).to eq true
 
     fill_in 'user_password', with: @user.password
@@ -25,7 +25,7 @@ feature 'profile' do
   scenario 'gives edit validation errors' do
     click_on full_name(@user)
 
-    fill_in 'user_username', with: ''
+    fill_in 'user_email', with: ''
 
     click_on 'Edit profile'
 
