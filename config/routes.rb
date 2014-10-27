@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resource :dashboard, only: [:show]
+    resources :rants, only: [:index]
+    resources :users, only: [:index]
+  end
+
   resources :confirmations, only: :show
   resource :dashboard, only: :show
   resources :favorites, only: [:index]

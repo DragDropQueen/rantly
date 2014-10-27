@@ -9,7 +9,7 @@ module Searchable
 
     settings(
       {
-        index: {
+        show: {
           number_of_shards: 1
         },
         analysis: {

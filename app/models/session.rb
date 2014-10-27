@@ -21,12 +21,16 @@ class Session
 
   def user_active?
     user = User.find_by(email: email)
-    unless password == '' || !user.authenticate(password) || user.active
+    unless password == '' || !user || !user.authenticate(password) || user.active
       errors.add(:base, 'This account is inactive')
     end
   end
 
   def user_id
     User.find_by(email: email).id
+  end
+
+  def user
+    User.find_by(email: email)
   end
 end

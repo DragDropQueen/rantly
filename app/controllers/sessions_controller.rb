@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
 
-
     if @session.valid?
       set_session
-      redirect_to dashboard_path
+      redirect_to admin_dashboard_path if @session.user.admin
+      redirect_to dashboard_path unless @session.user.admin
     else
       render :new
     end

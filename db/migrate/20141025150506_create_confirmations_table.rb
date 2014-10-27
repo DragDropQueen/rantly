@@ -1,7 +1,7 @@
 class CreateConfirmationsTable < ActiveRecord::Migration
   def change
     create_table :confirmations do |t|
-      t.belongs_to :user, index: true
+      t.belongs_to :user, show: true
       t.string :token
       t.boolean :confirmed, default: false
     end
