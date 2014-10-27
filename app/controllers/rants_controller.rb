@@ -4,6 +4,7 @@ class RantsController < ApplicationController
   def create
     @rant = Rant.new(rant_params)
     if @rant.save
+      RantMailer.send_mail_to_followers(@rant, @user)
       render json: @rant
     else
       raise
