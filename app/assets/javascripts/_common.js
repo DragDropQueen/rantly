@@ -194,6 +194,7 @@ RANT = {
   },
   formatRant: function (rant, user) {
     return '<div class="rant-wrapper" style="display: none">' +
+      '<h3>' + rant.title + '</h3>' +
       '<div class="rant-blurb">' +
       '<div class="left-blurb">' +
       '<a href="/users/' + user.id + '">' + user.first_name + '</a>' +

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025150506) do
+ActiveRecord::Schema.define(version: 20141027175912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20141025150506) do
     t.string   "avatar",          default: "http://sw-rantly.s3.amazonaws.com/uploads/32a365f1-7cf4-4a76-9030-55bcef22b919/200.jpeg"
     t.string   "email"
     t.boolean  "active",          default: false
+    t.boolean  "admin",           default: false
   end
 
 end
