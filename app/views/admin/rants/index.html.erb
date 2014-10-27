@@ -1,0 +1,25 @@
+<div class="admin-focus">
+  <h1>Rants</h1>
+
+  <ol class="admin-table">
+
+    <div class="row table-header">
+      <div class="col1">Name</div>
+      <div class="col2">Email</div>
+      <div class="col3">Title</div>
+      <div class="col4">Actions</div>
+    </div>
+
+    <% Rant.all.each do |rant| %>
+
+      <div class="row">
+        <div class="col1"><%= full_name(rant.user) %></div>
+        <div class="col2"><%= rant.user.email %></div>
+        <div class="col3"><%= rant.title %></div>
+        <div class="col4">view</div>
+      </div>
+
+    <% end %>
+
+  </ol>
+</div>

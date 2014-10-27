@@ -1,0 +1,56 @@
+.admin-focus {
+  margin: 5px;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  color: $dark-grey;
+  padding: 10px;
+
+  .col {
+    padding: 20px;
+  }
+
+  .col1 {
+    @extend .col;
+    width: 130px;
+  }
+
+  .col2 {
+    @extend .col;
+    width: 190px;
+  }
+
+  .col3 {
+    @extend .col;
+    width: 170px;
+  }
+
+  .col4 {
+    @extend .col;
+    width: 100px;
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  ol {
+    padding: 0;
+  }
+
+  .row:nth-child(odd) {
+    background-color: $light-grey;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .table-header:first-child {
+    background-color: $dark-grey;
+    color: white;
+  }
+}
