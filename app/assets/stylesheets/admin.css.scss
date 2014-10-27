@@ -37,7 +37,7 @@
 
   .col4 {
     @extend .col;
-    width: 100px;
+    width: 110px;
   }
 
   div {
@@ -62,5 +62,15 @@
   .table-header:first-child {
     background-color: $dark-grey;
     color: white;
+
+    a:hover {
+      color: $light-green;
+      text-decoration: none;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 }

@@ -31,5 +31,35 @@ feature 'Admin Rsers' do
       expect(page).to have_content(2)
     end
   end
+
+  scenario 'can sort the list of users' do
+    within '.header' do
+      click_on 'Users'
+    end
+
+    click_on 'Number of Rants'
+
+    within('.row:nth-child(2)') do
+      expect(page).to have_content(full_name(@user))
+      expect(page).to have_content(2)
+    end
+
+    within('.row:nth-child(3)') do
+      expect(page).to have_content(full_name(@other_user))
+      expect(page).to have_content(0)
+    end
+
+    click_on 'Number of Rants'
+
+    within('.row:nth-child(2)') do
+      expect(page).to have_content(full_name(@other_user))
+      expect(page).to have_content(0)
+    end
+
+    within('.row:nth-child(3)') do
+      expect(page).to have_content(full_name(@user))
+      expect(page).to have_content(2)
+    end
+  end
 end
 

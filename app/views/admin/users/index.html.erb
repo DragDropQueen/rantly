@@ -6,12 +6,18 @@
     <div class="row table-header">
       <div class="col1">Name</div>
       <div class="col2">Email</div>
-      <div class="col30">Number of Rants</div>
+      <div class="col30">
+        <% if params[:order] == 'true' %>
+          <%= link_to 'Number of Rants', admin_users_path({order: false}) %>
+        <% else %>
+          <%= link_to 'Number of Rants', admin_users_path({order: true}) %>
+        <% end %>
+      </div>
       <div class="col35">Disabled</div>
       <div class="col4">Actions</div>
     </div>
 
-    <% User.all.reverse.each do |user| %>
+    <% @users.each do |user| %>
 
       <div class="row">
         <div class="col1"><%= full_name(user) %></div>
@@ -27,9 +33,9 @@
         <div class="col4">
 
           <% if user.active %>
-            Enabled
+            Enable
           <% else %>
-            Disabled
+            Disable
           <% end %>
 
           Impersonate
