@@ -25,6 +25,16 @@
     width: 170px;
   }
 
+  .col30 {
+    @extend .col;
+    width: 90px;
+  }
+
+  .col35 {
+    @extend .col;
+    width: 70px;
+  }
+
   .col4 {
     @extend .col;
     width: 100px;

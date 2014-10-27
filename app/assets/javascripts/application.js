@@ -27,6 +27,15 @@ var colorTab = function () {
   if ($('.favorite-div').length != 0) {
     $('.favorite-header-link').css('color', '#257340');
   }
+  if ($('.rant-admin-div').length != 0) {
+    $('.rant-header-link').css('color', '#257340');
+  }
+  if ($('.user-admin-div').length != 0) {
+    $('.user-header-link').css('color', '#257340');
+  }
+  if ($('.dashboard-admin-div').length != 0) {
+    $('.admin-dashboard-link').css('color', '#257340');
+  }
 };
 
 var openHeadermenu = function () {

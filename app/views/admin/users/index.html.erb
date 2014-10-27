@@ -1,0 +1,43 @@
+<div class="admin-focus rant-admin-div">
+  <h1>Users</h1>
+
+  <ol class="admin-table">
+
+    <div class="row table-header">
+      <div class="col1">Name</div>
+      <div class="col2">Email</div>
+      <div class="col30">Number of Rants</div>
+      <div class="col35">Disabled</div>
+      <div class="col4">Actions</div>
+    </div>
+
+    <% User.all.reverse.each do |user| %>
+
+      <div class="row">
+        <div class="col1"><%= full_name(user) %></div>
+        <div class="col2"><%= user.email %></div>
+        <div class="col30"><%= user.rants.count %></div>
+        <div class="col35">
+          <% if user.active %>
+
+          <% else %>
+            ✓
+          <% end %>
+        </div>
+        <div class="col4">
+
+          <% if user.active %>
+            Enabled
+          <% else %>
+            Disabled
+          <% end %>
+
+          Impersonate
+
+        </div>
+      </div>
+
+    <% end %>
+
+  </ol>
+</div>

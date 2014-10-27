@@ -1,4 +1,6 @@
-<div class="admin-focus">
+
+
+<div class="admin-focus user-admin-div">
   <h1>Rants</h1>
 
   <ol class="admin-table">
@@ -10,7 +12,7 @@
       <div class="col4">Actions</div>
     </div>
 
-    <% Rant.all.each do |rant| %>
+    <% Rant.all.reverse.each do |rant| %>
 
       <div class="row">
         <div class="col1"><%= full_name(rant.user) %></div>

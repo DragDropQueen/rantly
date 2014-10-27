@@ -5,8 +5,8 @@ feature 'Admin Rants' do
   before do
     @admin = create_admin_user
     @user = create_user
-    @rant = create_rant(@user)
     @other_rant = create_other_rant(@user)
+    @rant = create_rant(@user)
 
     @other_user = create_other_user
 
