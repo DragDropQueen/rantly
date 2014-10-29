@@ -1,7 +1,7 @@
 /**
  * Created by savannah on 10/27/14.
  */
-SITE.rants = {
+SITE.admin_rants = {
   init: function () {
   },
   index: function () {

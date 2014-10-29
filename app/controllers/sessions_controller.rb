@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @session = Session.new(session_params)
 
     if @session.valid?
-      Keen.publish(:login, { :email => @session.user.email})
+      Keen.publish(:login, { :email => @session.user.email}) if Rails.env == "production"
 
       set_session
       redirect_to admin_dashboard_path if @session.user.admin

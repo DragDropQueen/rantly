@@ -4,10 +4,11 @@
   <title>Rantly</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+
   <%= csrf_meta_tags %>
   <meta name="viewport" content="initial-scale=1.0">
 </head>
-<body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
+<body data-controller="admin_<%= controller_name %>" data-action="<%= action_name %>">
 <div class='header'>
   <%= link_to('Rant.ly', admin_dashboard_path, class: 'logo') %>
 

@@ -1,0 +1,29 @@
+/**
+ * Created by savannah on 10/29/14.
+ */
+
+
+SITE.admin_dashboards = {
+  show: function(){
+    var client = new Keen({
+      projectId: '<%= ENV['KEEN_PROJECT_ID'] %>',
+      readKey: '<%= ENV['KEEN_READ_KEY'] %>'
+    });
+
+    Keen.ready(function(){
+      var query = new Keen.Query("count", {
+        eventCollection: "rant",
+        timeframe: "this_1_month",
+        interval: "daily",
+        groupBy: "keen.timestamp"
+      });
+      client.draw(query, document.getElementById("rants-per-day"), {
+        height: 280,
+        width: 300,
+        colors: ["#91de76", '#257340'],
+        chartType: 'columnchart',
+        title: 'Rants per Day'
+      });
+    });
+  }
+};

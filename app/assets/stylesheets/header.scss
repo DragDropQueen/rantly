@@ -69,6 +69,7 @@
   top: 65px;
   padding: 10px;
   border: 1px $light-green solid;
+  z-index: 999;
 
   a {
     @extend .header-link-mixin;

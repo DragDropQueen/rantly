@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
     false
   end
 
-
   def set_sidebar
     @rant = Rant.new
   end

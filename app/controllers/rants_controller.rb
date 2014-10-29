@@ -4,6 +4,8 @@ class RantsController < ApplicationController
   def create
     @rant = Rant.new(rant_params)
     if @rant.save
+      Keen.publish(:rant, {:email => @user.email, rant: @rant.title}) if Rails.env == 'production'
+
       RantMailer.send_mail_to_followers(@rant, @user)
       render json: @rant
     else

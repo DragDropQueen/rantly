@@ -5,6 +5,7 @@
   text-align: center;
   color: $dark-grey;
   padding: 10px;
+  min-height: 600px;
 
   #all-button, #spam-button {
     width: 50px;
@@ -51,6 +52,12 @@
   .col4 {
     @extend .col;
     width: 110px;
+  }
+
+  .charts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
   div {

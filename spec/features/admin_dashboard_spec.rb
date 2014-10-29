@@ -14,7 +14,7 @@ feature 'Admin Dashboard' do
   end
 
   scenario 'is redirected properly on log in' do
-    expect(page).to have_content 'Rants per day'
+    expect(page).to have_content 'Statistics'
 
     within('.header') do
       expect(page).to have_link('Rants')
