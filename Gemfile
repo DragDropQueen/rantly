@@ -59,3 +59,5 @@ gem 'aws-sdk'
 
 gem 'redcarpet'
 
+gem 'bootstrap-datepicker-rails'
+

@@ -29,4 +29,17 @@ feature 'Admin Rants' do
       expect(page).to have_content(@other_rant.title)
     end
   end
+
+  scenario 'can filter rants by date' do
+    within '.header' do
+      click_on 'Rants'
+    end
+
+    fill_in 'end_date', with: '2014-10-09'
+
+    click_on 'Filter'
+
+    expect(page).to_not have_content(@rant.title)
+    expect(page).to_not have_content(@other_rant.title)
+  end
 end

@@ -1,7 +1,25 @@
-
-
-<div class="admin-focus user-admin-div">
+<div class="admin-focus rant-admin-div">
   <h1>Rants</h1>
+
+  <%= form_tag admin_rants_path do %>
+
+    <div class="rant-controls">
+      <div class="buttons">
+        <%= button_to 'All', admin_rants_path, id: 'all-button' %>
+        <button id="spam-button">Spam</button>
+      </div>
+
+      <%= text_field_tag :start_date, params[:start_date] %>
+
+      <span>To</span>
+
+      <%= text_field_tag :end_date, params[:end_date] %>
+
+      <%= submit_tag 'Filter', class: 'button' %>
+
+    </div>
+
+  <% end %>
 
   <ol class="admin-table">
 
@@ -12,7 +30,7 @@
       <div class="col4">Actions</div>
     </div>
 
-    <% Rant.all.reverse.each do |rant| %>
+    <% @rants.each do |rant| %>
 
       <div class="row">
         <div class="col1"><%= full_name(rant.user) %></div>

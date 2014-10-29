@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require bootstrap-datepicker
 
 var colorTab = function () {
   if ($('.dashboard-div').length !== 0) {

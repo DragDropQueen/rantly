@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :dashboard, only: [:show]
     resources :rants, only: [:index]
     resources :users, only: [:index]
+    post '/rants', to: 'rants#filter'
   end
 
   resources :confirmations, only: :show

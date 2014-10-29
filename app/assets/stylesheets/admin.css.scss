@@ -6,6 +6,17 @@
   color: $dark-grey;
   padding: 10px;
 
+  #all-button, #spam-button {
+    width: 50px;
+    background-color: $light-grey;
+    border: $grey solid 1px;
+    height: 28px;
+  }
+
+  #spam-button {
+    margin-left: -10px;
+  }
+
   .col {
     padding: 20px;
   }
@@ -46,6 +57,12 @@
 
   ol {
     padding: 0;
+  }
+
+  .rant-controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .row:nth-child(odd) {
