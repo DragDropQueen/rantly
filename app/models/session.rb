@@ -22,7 +22,7 @@ class Session
   def user_active?
     user = User.find_by(email: email)
     unless password == '' || !user || !user.authenticate(password) || user.active
-      errors.add(:base, 'This account is inactive')
+      errors.add(:base, 'This account is disabled')
     end
   end
 
