@@ -11,6 +11,8 @@
     background-color: $light-grey;
     border: $grey solid 1px;
     height: 28px;
+    display: inline-block;
+    cursor: pointer;
   }
 
   #spam-button {
@@ -52,6 +54,10 @@
   }
 
   div {
+    display: inline-block;
+  }
+
+  .rant-controls form {
     display: inline-block;
   }
 

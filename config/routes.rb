@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resource :dashboard, only: [:show]
-    resources :rants, only: [:index]
+    resources :rants, only: [:index, :update, :destroy]
     resources :users, only: [:index]
-    post '/rants', to: 'rants#filter'
+    post '/rants', to: 'rants#index'
+    get '/rants/spam', to: 'rants#spam', as: 'spam'
   end
 
   resources :confirmations, only: :show

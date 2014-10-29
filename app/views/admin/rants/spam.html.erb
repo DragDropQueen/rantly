@@ -1,0 +1,4 @@
+<%= render layout: 'admin/rants/rant_table' do |id| %>
+  <%= link_to 'Not Spam', admin_rant_path(id), method: :patch %>
+  <%= link_to 'Delete', admin_rant_path(id), method: :delete %>
+<% end %>

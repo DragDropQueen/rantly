@@ -1,0 +1,47 @@
+<div class="admin-focus rant-admin-div">
+  <h1>Rants</h1>
+
+  <%= form_tag admin_rants_path do %>
+
+    <div class="rant-controls">
+      <div class="buttons">
+        <%= button_to 'All', admin_rants_path, id: 'all-button' %>
+        <%= button_to 'Spam', admin_spam_path, id: 'spam-button', method: :get %>
+      </div>
+
+      <%= text_field_tag :start_date, params[:start_date] %>
+
+      <span>To</span>
+
+      <%= text_field_tag :end_date, params[:end_date] %>
+
+      <%= submit_tag 'Filter', class: 'button' %>
+
+    </div>
+
+  <% end %>
+
+  <ol class="admin-table">
+
+    <div class="row table-header">
+      <div class="col1">Name</div>
+      <div class="col2">Email</div>
+      <div class="col3">Title</div>
+      <div class="col4">Actions</div>
+    </div>
+
+    <% @rants.each do |rant| %>
+
+      <div class="row">
+        <div class="col1"><%= full_name(rant.user) %></div>
+        <div class="col2"><%= rant.user.email %></div>
+        <div class="col3"><%= rant.title %></div>
+        <div class="col4">
+          <%= yield rant.id %>
+        </div>
+      </div>
+
+    <% end %>
+
+  </ol>
+</div>

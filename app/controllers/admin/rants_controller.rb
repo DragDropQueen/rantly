@@ -1,22 +1,44 @@
 class Admin::RantsController < Admin::AdminController
   def index
-    @rants = Rant.all.reverse
+    get_filtered_rants
+
+    @rants = @rants.where(spam: false).reverse
   end
 
-  def filter
-    @rants = Rant.all
+  def update
+    @rant = Rant.unscoped.find(params[:id])
 
-    filter_by_end_date
+    @rant.update(spam: false)
 
-    filter_by_start_date
+    redirect_to admin_spam_path, notice: "Rant #{@rant.title} has been marked as not spam."
+  end
 
-    render :index
+  def destroy
+    @rant = Rant.unscoped.find(params[:id])
+
+    @rant.destroy
+
+    redirect_to admin_spam_path, notice: "Rant #{@rant.title} has been deleted."
+  end
+
+  def spam
+    get_filtered_rants
+
+    @rants = @rants.where(spam: true).reverse
   end
 
   private
 
+  def get_filtered_rants
+    @rants = Rant.unscoped.all
+
+    filter_by_end_date
+
+    filter_by_start_date
+  end
+
   def filter_by_start_date
-    if params[:start_date] != ''
+    if params[:start_date] && params[:start_date] != ''
       date = Date.parse(params[:start_date])
 
       @rants = @rants.where("created_at > '#{date}'")
@@ -24,7 +46,7 @@ class Admin::RantsController < Admin::AdminController
   end
 
   def filter_by_end_date
-    if params[:end_date] != ''
+    if params[:end_date] && params[:end_date] != ''
       date = Date.parse(params[:end_date])
 
       @rants = @rants.where("created_at < '#{date}'")
