@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
     @session = Session.new(session_params)
 
     if @session.valid?
+      Keen.publish(:login, { :email => @session.user.email})
+
       set_session
       redirect_to admin_dashboard_path if @session.user.admin
       redirect_to dashboard_path unless @session.user.admin

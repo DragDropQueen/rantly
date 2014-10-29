@@ -61,3 +61,4 @@ gem 'redcarpet'
 
 gem 'bootstrap-datepicker-rails'
 
+gem 'keen'
