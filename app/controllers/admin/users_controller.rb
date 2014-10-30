@@ -1,8 +1,12 @@
 class Admin::UsersController < Admin::AdminController
   def index
-    @users = User.where(admin: false).sort_by{|user| user.rants.count}.reverse if params[:order] == 'true'
-
-    @users = User.where(admin: false).order(:created_at).reverse unless params[:order] == 'true'
+    if params[:order] == 'true'
+      @users = User.where(admin: false).sort_by{ |user|
+        user.rants.count
+      }.reverse
+    else
+      @users = User.where(admin: false).order(:created_at).reverse
+    end
   end
 
   def update

@@ -4,9 +4,8 @@ class UsersController < ApplicationController
   def show
     require_authentication!; set_sidebar
 
-    @comment = Comment.new
-
     @profile_user = User.find(params[:id])
+
     respond_to do |format|
       format.html {render layout: 'application'}
       format.json {render json: @profile_user}
@@ -14,28 +13,22 @@ class UsersController < ApplicationController
   end
 
   def new
-    @direct_post = CloudFileUploader.create_presigned_s3_object
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      Keen.publish(:user, {:email => @user.email}) if Rails.env == 'production'
-
-      session[:show_register_notice] = 'nope'
+      publish_keen_stats
+      hide_register_notice
       @user.create_confirmation_and_send_email
-      flash[:notice] = 'You have registered successfully! Please check your email for the next steps'
-      redirect_to root_path
+      redirect_to root_path, notice: 'You have registered successfully! Please check your email for the next steps'
     else
-      @direct_post = CloudFileUploader.create_presigned_s3_object
       render :new
     end
   end
 
   def edit
-    @direct_post = CloudFileUploader.create_presigned_s3_object
-
     render layout: 'edit_user' if require_authentication!
   end
 
@@ -43,12 +36,9 @@ class UsersController < ApplicationController
     require_authentication!
 
     if @user.update(user_params)
-      flash[:notice] = 'Your profile has been updated!'
-      redirect_to root_path
+      redirect_to root_path, notice: 'Your profile has been updated!'
     else
       flash[:notice] = 'Please fill out all fields!'
-      @direct_post = CloudFileUploader.create_presigned_s3_object
-
       render :edit
     end
   end
@@ -57,5 +47,13 @@ class UsersController < ApplicationController
 
   def user_params
     params[:user].permit(:email, :password, :first_name, :last_name, :bio, :frequency, :avatar)
+  end
+
+  def publish_keen_stats
+    Keen.publish(:user, {:email => @user.email}) if Rails.env == 'production'
+  end
+
+  def hide_register_notice
+    session[:show_register_notice] = 'nope'
   end
 end

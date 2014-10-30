@@ -9,31 +9,30 @@
   <meta name="viewport" content="initial-scale=1.0">
 </head>
 <body data-controller="admin_<%= controller_name %>" data-action="<%= action_name %>">
-<div class='header'>
-  <%= link_to('Rant.ly', admin_dashboard_path, class: 'logo') %>
+  <div class='header'>
+    <%= link_to('Rant.ly', admin_dashboard_path, class: 'logo') %>
 
-  <div class="header-open">
+    <div class="header-open">
+      <%= render 'layouts/admin_links' %>
+    </div>
+
+    <%= image_tag('menu-icon.png', id: 'header-menu-toggle') %>
+
+  </div>
+
+  <div class="header-menu">
     <%= render 'layouts/admin_links' %>
   </div>
 
-  <%= image_tag('menu-icon.png', id: 'header-menu-toggle') %>
 
-</div>
+  <p class="flash"><%= flash[:notice] %></p>
 
-<div class="header-menu">
-  <%= render 'layouts/admin_links' %>
-</div>
-
-
-<p class="flash"><%= flash[:notice] %></p>
-
-<div class="wrapper">
-
-  <div class="page-container">
-    <%= yield %>
+  <div class="wrapper">
+  
+    <div class="page-container">
+      <%= yield %>
+    </div>
 
   </div>
-
-</div>
 </body>
 </html>

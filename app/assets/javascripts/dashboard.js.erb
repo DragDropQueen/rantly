@@ -2,7 +2,6 @@
  * Created by savannah on 10/29/14.
  */
 
-
 SITE.admin_dashboards = {
   show: function(){
     var client = new Keen({
@@ -14,7 +13,7 @@ SITE.admin_dashboards = {
       var query = new Keen.Query("count", {
         eventCollection: "rant",
         timeframe: "this_1_month",
-        interval: "daily",
+        interval: "daily"
       });
       client.draw(query, document.getElementById("rants-per-day"), {
         height: 280,
@@ -27,7 +26,7 @@ SITE.admin_dashboards = {
       query = new Keen.Query("count", {
         eventCollection: "user",
         timeframe: "this_1_month",
-        interval: "daily",
+        interval: "daily"
       });
       client.draw(query, document.getElementById("users-per-day"), {
         height: 280,

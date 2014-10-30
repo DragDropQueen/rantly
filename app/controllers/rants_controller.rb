@@ -3,9 +3,9 @@ class RantsController < ApplicationController
 
   def create
     @rant = Rant.new(rant_params)
-    if @rant.save
-      Keen.publish(:rant, {:email => @user.email, rant: @rant.title}) if Rails.env == 'production'
 
+    if @rant.save
+      publish_keen_stats
       RantMailer.send_mail_to_followers(@rant, @user)
       render json: @rant
     else
@@ -35,7 +35,6 @@ class RantsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
     @display_rant = Rant.find(params[:id])
   end
 
@@ -43,6 +42,10 @@ class RantsController < ApplicationController
 
   def rant_params
     params.require(:rant).permit(:title, :rant).merge({user_id: @user.id})
+  end
+
+  def publish_keen_stats
+    Keen.publish(:rant, {:email => @user.email, rant: @rant.title}) if Rails.env == 'production'
   end
 
   def index

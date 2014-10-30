@@ -9,11 +9,9 @@ class SessionsController < ApplicationController
     @session = Session.new(session_params)
 
     if @session.valid?
-      Keen.publish(:login, { :email => @session.user.email}) if Rails.env == "production"
-
+      publish_keen_stats
       set_session
-      redirect_to admin_dashboard_path if @session.user.admin
-      redirect_to dashboard_path unless @session.user.admin
+      @session.user.admin ? redirect_to(admin_dashboard_path) : redirect_to(dashboard_path)
     else
       render :new
     end
@@ -21,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+
     redirect_to root_path
   end
 
@@ -28,6 +27,10 @@ class SessionsController < ApplicationController
 
   def session_params
     params.require(:session).permit(:email, :password)
+  end
+
+  def publish_keen_stats
+    Keen.publish(:login, { :email => @session.user.email}) if Rails.env == "production"
   end
 
   def set_session
