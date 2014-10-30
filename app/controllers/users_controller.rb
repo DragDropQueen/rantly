@@ -21,6 +21,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      Keen.publish(:user, {:email => @user.email}) if Rails.env == 'production'
+
       session[:show_register_notice] = 'nope'
       @user.create_confirmation_and_send_email
       flash[:notice] = 'You have registered successfully! Please check your email for the next steps'
