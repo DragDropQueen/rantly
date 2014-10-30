@@ -15,7 +15,6 @@ SITE.admin_dashboards = {
         eventCollection: "rant",
         timeframe: "this_1_month",
         interval: "daily",
-        groupBy: "keen.timestamp"
       });
       client.draw(query, document.getElementById("rants-per-day"), {
         height: 280,
@@ -29,7 +28,6 @@ SITE.admin_dashboards = {
         eventCollection: "user",
         timeframe: "this_1_month",
         interval: "daily",
-        groupBy: "keen.timestamp"
       });
       client.draw(query, document.getElementById("users-per-day"), {
         height: 280,
@@ -37,6 +35,19 @@ SITE.admin_dashboards = {
         colors: ["#91de76", '#257340'],
         chartType: 'columnchart',
         title: 'Users per Day'
+      });
+
+      query = new Keen.Query("count", {
+        eventCollection: "login",
+        timeframe: "this_1_week",
+        interval: "hourly"
+      });
+      client.draw(query, document.getElementById("sessions-per-day"), {
+        height: 280,
+        width: 300,
+        colors: ["#91de76", '#257340'],
+        chartType: 'columnchart',
+        title: 'Logins per hour'
       });
     });
 
