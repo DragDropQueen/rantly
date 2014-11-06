@@ -38,7 +38,7 @@
             <%= link_to 'Enable', admin_user_path(user.id), method: :patch %>
         <% end %>
 
-          Impersonate
+          <%= link_to 'Impersonate', admin_impersonate_path(user.id) %>
 
         </div>
       </div>

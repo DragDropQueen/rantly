@@ -41,15 +41,15 @@ class Admin::RantsController < Admin::AdminController
     if params[:start_date] && params[:start_date] != ''
       date = Date.parse(params[:start_date])
 
-      @rants = @rants.where("created_at > '#{date}'")
+      @rants = @rants.where("created_at >= '#{date}'")
     end
   end
 
   def filter_by_end_date
     if params[:end_date] && params[:end_date] != ''
-      date = Date.parse(params[:end_date])
+      date = Date.parse(params[:end_date]) + 1
 
-      @rants = @rants.where("created_at < '#{date}'")
+      @rants = @rants.where("created_at <= '#{date}'")
     end
   end
 end

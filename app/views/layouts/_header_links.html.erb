@@ -2,6 +2,7 @@
     <%= link_to 'Dashboard', dashboard_path, class: 'border dashboard-link' %>
     <%= link_to 'Following', user_follows_path(@user), class: "border follow-header-link" %>
     <%= link_to 'Favorites', favorites_path, class: 'border favorite-header-link' %>
+    <%= link_to('Return to Admin', admin_reset_path, class: 'border') if session[:admin_id] %>
     <%= link_to 'Search', search_index_path, class: "search-link" %>
   </div>
 

@@ -80,6 +80,9 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
+    google_visualr (2.4.0)
+    groupdate (2.3.0)
+      activesupport (>= 3)
     hashie (3.3.1)
     hike (1.2.3)
     i18n (0.6.11)
@@ -216,6 +219,8 @@ DEPENDENCIES
   database_cleaner
   elasticsearch-model
   elasticsearch-rails
+  google_visualr (>= 2.1)
+  groupdate
   jbuilder (~> 2.0)
   jquery-rails
   keen

@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    session[:admin_id] = nil
 
     redirect_to root_path
   end
@@ -35,5 +36,8 @@ class SessionsController < ApplicationController
 
   def set_session
     session[:user_id] = @session.user_id
+    if @session.user.admin
+      session[:admin_id] = @session.user_id
+    end
   end
 end

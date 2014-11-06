@@ -48,6 +48,16 @@ SITE.admin_dashboards = {
         chartType: 'columnchart',
         title: 'Logins per hour'
       });
+
+      client.draw(<%= Rant.group_by_day(:created_at, last: 28).count.to_json %>, document.getElementById("rants-per-day"), {
+        height: 280,
+        width: 300,
+        colors: ["#91de76", '#257340'],
+        chartType: 'columnchart',
+        title: 'Rants per Day'
+      });
+
+
     });
 
   }

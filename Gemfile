@@ -62,3 +62,7 @@ gem 'redcarpet'
 gem 'bootstrap-datepicker-rails'
 
 gem 'keen'
+
+gem "google_visualr", ">= 2.1"
+
+gem 'groupdate'
