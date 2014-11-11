@@ -31,9 +31,6 @@
     <div id="users-per-day"></div>
     <div id="sessions-per-day"></div>
 
-
-    <%= Rant.group_by_day(:created_at, last: 7).count.values %>
-
     <div>
       <p class="chart-title">Rants per Day</p>
       <canvas id="rants-per-day" width="300" height="300"></canvas>
