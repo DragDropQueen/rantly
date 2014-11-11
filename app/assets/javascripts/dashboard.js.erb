@@ -58,6 +58,19 @@ SITE.admin_dashboards = {
       });
 
 
+      var data = {
+        labels: <%= Rant.group_by_day(:created_at, last: 7).count.keys.map{|date| date.strftime("%b %d, %Y")}.to_json %>,
+        datasets: [{
+          fillColor: 'rgba(145, 222, 118, 1)',
+          data: <%= Rant.group_by_day(:created_at, last: 7).count.values %>
+        }]
+      };
+
+      var ctx = $("#rants-per-day").get(0).getContext("2d");
+      var myNewChart = new Chart(ctx).Bar(data, {
+        scaleShowGridLines: false,
+        barValueSpacing: 5
+      });
     });
 
   }

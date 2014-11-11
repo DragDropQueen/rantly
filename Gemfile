@@ -63,6 +63,6 @@ gem 'bootstrap-datepicker-rails'
 
 gem 'keen'
 
-gem "google_visualr", ">= 2.1"
+gem 'chartkick'
 
 gem 'groupdate'
