@@ -63,6 +63,4 @@ gem 'bootstrap-datepicker-rails'
 
 gem 'keen'
 
-gem 'chartkick'
-
 gem 'groupdate'
