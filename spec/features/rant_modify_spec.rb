@@ -16,9 +16,7 @@ feature 'rant' do
       click_link 'Delete'
     end
 
-    expect(page).to have_content('rant deleted!')
-
-    expect(page).to_not have_content(@rant.title)
+    expect(page).to have_content(@rant.title + ' has been deleted!')
 
     expect(page).to_not have_content('i just want to be better than, than your heads only')
   end

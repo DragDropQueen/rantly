@@ -18,7 +18,7 @@ feature 'profile' do
   end
 
   scenario 'can access profile from rant show' do
-    click_on @rant.rant
+    visit rant_path(@rant)
 
     click_on @other_user.first_name
 
@@ -28,7 +28,7 @@ feature 'profile' do
   end
 
   scenario "can view a user's rants on their profile" do
-    click_on @rant.rant
+    visit rant_path(@rant)
 
     click_on @other_user.first_name
 
@@ -38,7 +38,7 @@ feature 'profile' do
   end
 
   scenario 'can comment on a user\'s profile' do
-    click_on @rant.rant
+    visit rant_path(@rant)
 
     click_on @other_user.first_name
 

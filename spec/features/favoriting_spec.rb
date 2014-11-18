@@ -18,7 +18,7 @@ feature 'favoriting', js: true do
       click_on @user.first_name
     end
 
-    within('h3:first-child') do
+    within('h3:nth-child(2)') do
       expect(page).to have_content(@rant.title)
     end
   end

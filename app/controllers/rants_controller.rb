@@ -26,9 +26,9 @@ class RantsController < ApplicationController
 
     if @rant.user_id == @user.id
       @rant.destroy
-      flash[:notice] = 'rant deleted!'
+      flash[:notice] = "#{@rant.title} has been deleted!"
     else
-      flash[:notice] = 'you can only delete your own rants!'
+      flash[:notice] = "Oops! Couldn't delete that rant!"
     end
 
     redirect_to '/dashboard'

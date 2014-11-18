@@ -55,8 +55,10 @@ var openHeadermenu = function () {
 };
 
 
+
 $(document).ready(function () {
   colorTab();
 
   openHeadermenu();
+
 });

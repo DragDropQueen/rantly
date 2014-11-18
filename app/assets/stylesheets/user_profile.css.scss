@@ -18,6 +18,7 @@
   h2 {
     display: block;
     margin: auto;
+    margin-bottom: 20px;
   }
 
   h3 {
@@ -42,9 +43,13 @@
     word-break: break-all;
   }
 
-  .subheader {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  .bio {
+    min-height: 300px;
+
+    img {
+      max-height: 300px;
+      max-width: 300px;
+      float: left;
+    }
   }
 }

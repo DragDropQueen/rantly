@@ -18,9 +18,9 @@ class Search
   end
 
   def get_normal_results
-    user_based = User.search query: {match: {_all: search_text}}
-    rant_based = Rant.search query: {match: {_all: search_text}}
+    user_based = User.search search_text
+    rant_based = Rant.search search_text
 
-    Rant.where(user_id: user_based.records.records) + rant_based.records.records
+    Rant.where(user: user_based.records.records) + rant_based.records.records
   end
 end

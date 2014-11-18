@@ -10,9 +10,9 @@
       <% end %>
 
     </div>
-    <a href="/rants/<%= rant.id %>" class="right-blurb">
+    <div id="<%=rant.id %>" class="right-blurb">
       <%= render_rant(truncate(rant.rant, length: 300)) %>
-    </a>
+    </div>
 
 
   </div>

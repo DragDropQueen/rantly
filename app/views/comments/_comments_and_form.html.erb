@@ -7,7 +7,10 @@
 
 <% commented.comments.each do |comment| %>
   <div class="comment">
-    <%= image_tag comment.user.avatar %>
+    <div class="comment-left">
+      <%= link_to comment.user.first_name, user_path(comment.user) %>
+      <%= image_tag comment.user.avatar %>
+    </div>
     <p><%= truncate(comment.body, length: 150) %></p>
   </div>
 <% end %>

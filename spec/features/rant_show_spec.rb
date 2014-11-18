@@ -7,7 +7,7 @@ feature 'rant show' do
     @rant = create_rant(@user)
     login(@user)
 
-    click_on @rant.rant
+    visit rant_path(@rant)
   end
 
   scenario 'can view a rant' do

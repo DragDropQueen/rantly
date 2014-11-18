@@ -6,16 +6,18 @@
 
   <hr class="long"/>
 
-  <div class="subheader">
-
+  <div class="bio">
     <%= image_tag @profile_user.avatar %>
 
     <h2><%= @profile_user.frequency %> Ranter</h2>
+
+    <%= @profile_user.bio %>
   </div>
 
-  <%= @profile_user.bio %>
+  <hr/>
 
   <div class="profile-rants">
+    <h2>Rants by this User</h2>
     <% get_user_favorited_rants(@profile_user).each do |rant| %>
       <h3><%= rant.title %></h3>
 

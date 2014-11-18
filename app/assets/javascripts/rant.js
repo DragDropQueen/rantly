@@ -97,7 +97,14 @@ RANT = {
       '</div>'
   },
 
-  fadeInRant: function(){
+  fadeInRant: function () {
     $('.rant-wrapper:last-child').fadeIn(3000);
+  },
+
+  linkRantShow: function (elements) {
+    elements.click(function () {
+      var id = $(this).attr("id");
+      document.location.href = "/rants/" + id;
+    });
   }
 };

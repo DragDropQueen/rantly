@@ -13,7 +13,8 @@ SITE = {
       FAVORITE.favorite($('.favorite-link'));
       FAVORITE.unfavorite($('.unfavorite-link'));
 
-      RANT.rantPostHandler()
+      RANT.rantPostHandler();
+      RANT.linkRantShow($('.right-blurb'));
     }
   },
   users: {}

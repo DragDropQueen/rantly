@@ -10,7 +10,7 @@ module RantsHelper
   end
 
   def get_mentioned_rants
-    string = '@' + @user.email
+    string = @user.email
 
     response = Rant.search string
 
