@@ -1,6 +1,7 @@
 /**
  * Created by savannah on 10/30/14.
  */
+
 RANT = {
 
   rantPostHandler: function () {
@@ -80,6 +81,7 @@ RANT = {
   },
 
   formatRant: function (rant, user) {
+
     return '<div class="rant-wrapper" style="display: none">' +
       '<h3>' + rant.title + '</h3>' +
       '<div class="rant-blurb">' +
@@ -88,13 +90,20 @@ RANT = {
       '<img src="' + user.avatar + '" />' +
       '</div>' +
       '<a href="/rants/' + rant.id + '" class="right-blurb">' +
-      rant.rant.substring(0, 300) +
-      '... </a>' +
+      marked(rant.rant.substring(0, 300)) +
+      '</a>' +
       '</div>' +
       '<p class="rant-link-container">' +
       '<a href="rants/' + rant.id + '" data-method="delete" rel="no-follow" class="rant-link">Delete</a>' +
       '</p>' +
       '</div>'
+  },
+
+  linkHashtags: function(text) {
+    var tags = text.scan(/#\w+/);
+
+    tags.forEach(function(tag){
+    })
   },
 
   fadeInRant: function () {

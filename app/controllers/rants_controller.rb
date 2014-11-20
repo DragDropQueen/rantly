@@ -31,7 +31,7 @@ class RantsController < ApplicationController
       flash[:notice] = "Oops! Couldn't delete that rant!"
     end
 
-    redirect_to '/dashboard'
+    redirect_to dashboard_path
   end
 
   def show

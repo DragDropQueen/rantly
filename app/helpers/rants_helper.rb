@@ -26,7 +26,6 @@ module RantsHelper
 
     tags = text.scan(/#\w+/)
 
-    puts tags
 
     tags.each { |tag|
       unless tag == '#39'
